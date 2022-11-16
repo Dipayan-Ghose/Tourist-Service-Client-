@@ -3,7 +3,7 @@ import '../Header/Header.css';
 
 const Foooter = () => {
   return (
-    <footer className="footer footer-center absolute bottom-0 p-10 bg-green-400 text-base-content rounded-t-lg">
+    <footer className="footer footer-center bottom-0 p-10 bg-green-400 text-base-content rounded-t-lg">
       <div className="grid grid-flow-col gap-4">
         <a className="link link-hover textDesign ">About us</a>
         <a className="link link-hover textDesign">Contact</a>

@@ -1,0 +1,16 @@
+.width{
+    width: 350px;
+    
+}
+
+.imgWidth{
+    width: 340px;
+    height: 200px;
+    border-radius: 20px;
+
+}
+
+.backgroundImg{
+    background-image: url(../../../public/bg.jpg);
+   
+}

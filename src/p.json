@@ -1,0 +1,57 @@
+[
+
+    {
+        "name": "Bandarbaan",
+        "rating": { "number": 5 },
+        "cost": 4000,
+        "image_url": "https://images.unsplash.com/photo-1558673810-9b0b6316d4f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YmFuZGFyYmFuJTJDJTIwYmFuZ2xhZGVzaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        "details": "A good algorithm usually comes together with a set of good data structures that allow the algorithm to manipulate the data efficiently. In this online course, we consider the common data structures that are used in various computational problems. You will learn how these data structures are implemented in different programming languages and will practice implementing them in our programming assignments. This will help you to understand what is going on inside a particular built-in implementation of a data structure and what to expect from it. You will also learn typical use cases for these data structures."
+    },
+
+    {
+       "name": "Rangamati",
+        "rating": { "number": 4 },
+        "cost": 4500,
+        
+        "image_url": "https://images.unsplash.com/photo-1562793171-b7fa2e3369d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cmFuZ2FtYXRpJTJDJTIwYmFuZ2xhZGVzaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        "details": "Rangamati is the most popular destination in Chittagong Hill Tracts covered by the scenic beauty of Kaptai Lake, plenty of small hills and tribal people. The lake was made in 1960 dotted with island is undoubtedly beautiful. Boat cruise through the lake would be the best way to spend your day. This place is also inhabited by the many indigenous group of People like Chakma, Marma & Tripura. The tribal lifestyle, handicrafts market, weaving factories, the largest tribal floating market Bonorupa and the Chakma King house are the richest sites to explore."
+    },
+
+    {
+        "name": "Cox's Bazar",
+        "rating": { "number": 4.5 },
+        "cost": 5000,
+        
+        "image_url": "https://thumbs.dreamstime.com/b/sunset-beach-coxs-bazar-people-enjoying-sunset-over-bay-bengal-coxs-bazar-bangladesh-116815689.jpg",
+        "details": "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island. "
+    },
+
+    {
+        "name": "Kutubdiya Island",
+        "rating": { "number": 3.5 },
+        "cost": 3000,
+        
+        "image_url": "https://thumbs.dreamstime.com/b/sunset-view-wind-power-plant-kutubdia-bangladesh-s-first-windmill-249171297.jpg",
+        "details": "Kutubdia Island is the coastal area of Bangladesh. It stands in the belly of Bay of Bengal. This Island is the off coast near Chakaria and Cox’s Bazar of Bangladesh. Total island is covered by 215.8 square kilometers of lands. This is one of the oldest island of Bangladesh. Because of that since 1917 there had been made a police station at kutubdia for its protection and also for the security of the local peoples of the island.Kutubdia Lighthouses (Akbar Shah, Kutubdia Island) station established 1846. Active; focal plane 39 m (128 ft); three white flashes every 10 s. Approx. 35 m (115 ft) square pyramidal skeletal tower with lantern and gallery. The top of the tower carries a red and white horizontally slatted daymark. The photo at right, published by a local newspaper, is believed to be by the Chittagong Port Authority. The lighthouse appears to be a twin of the St. Martin’s Island lighthouse."
+    },
+
+    {
+        "name": "Tanguar Haur",
+        "rating": { "number": 3.5},
+        "cost": 6000,
+        
+        "image_url": "https://thumbs.dreamstime.com/b/beautiful-landscape-piles-stones-bank-river-mountain-background-sunamgonj-bangldesh-picture-was-taken-228669693.jpg",
+        "details": "Tanguar Haor is a river basin which is located at the Tahirpur Upazila of Sunamgonj district in Sylhet Division. Its takes roughly 6-7 hours to reach here from Dhaka. After getting off at the Surma Bridge just off the Bus station, you need to hire a bike or a CNG Taxi to get yourself at Tahirpur. From Tahirpur you can hire boat and enjoy the beauty of Haor. The haor is an ideal place for the migratory birds. Every winter about 200 types of migratory birds come to this haor and make their temporary habitat here. Once upon a time the zamindars of Sunamganj area used to make cruise into this haor with large Pansi boats for hunting birds."
+    },
+
+    {
+       "name": "BichanaKandi",
+        "rating": { "number": 5},
+        "cost": 7500,
+        
+        "image_url": "https://thumbs.dreamstime.com/b/lakmachara-waterfalls-water-sylhet-bangladesh-lakmachara-waterfalls-water-sylhet-258964494.jpg",
+        "details": "Bisnakandi, is a village in Rustompur Union, Gowainghat Upazila of Bangladesh's Sylhet District. In recent years, there has been an influx of tourists to its river. The most attractions are the sky skies The front row rows the mountains. Cloud coils on the top of the mountain. Tinted cloudy clouds in near proximity The fountain frozen in the clouds Down the shaws about water and stones. The water is mixed again with Pyren. Stony Friendship Mitali in rocks and rivers The battle of life in the stone man. The broad green surrounding. Green Coconut Mountain on the hill. Green cover These are not the scenario, the scenes across the bichanakandi of Sylhet so that someone really captures the frame and brings it to the sky. From afar, it seems that this cloud, these people, these hills or rocks are all about them. The skyscrapers on both sides, the streams flowing between them. Water is absolutely clear, transparent, and wobbly. And there are small and large different shapes and colors. The water is so transparent that the bottom stone or the drowning feet are clearly visible."
+    }
+    
+
+]
