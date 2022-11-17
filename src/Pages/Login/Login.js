@@ -1,0 +1,115 @@
+import React, { useContext, useState } from "react";
+import { FcGoogle, FcDown } from "react-icons/fc";
+import { FaArrowCircleDown, FaGithub } from "react-icons/fa";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import './Login.css';
+import { authContext } from "../../Authentication/Auth/Auth";
+
+const Login = () => {
+  // const navigate= useNavigate();
+  // const [error, setError]= useState('');
+  // const location = useLocation();
+  // const from= location.state?.from?.pathname || '/';
+
+  const {providerLogin}=useContext(authContext);
+  const providerGoogle= new GoogleAuthProvider();
+
+  const handleSubmit=(event)=>{
+    event.preventDefault();
+    const form= event.target;
+    const email= form.email.value;
+    const password= form.password.value;
+    // signInUser(email,password)
+    // .then(res=>{
+    //   const user = res.user;
+    //   console.log(user);
+    //   form.reset();
+    //   setError('');
+    //   navigate(from, {replace: true});
+    // })
+    // .catch(error=>{
+    //  console.error(error)
+    // setError(error.message);
+    // });
+
+  };
+
+  const googleSignIn = () => {
+    providerLogin(providerGoogle)
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+        // navigate(from, {replace: true});
+      })
+      .catch((error) => console.error(error));
+  };
+
+ 
+
+  return (
+    <div>
+      <div className="hero width mx-auto min-h-screen bg-green-100 rounded my-4">
+        <div className="hero-content flex-col lg:flex-row-reverse  mx-auto">
+         <form onSubmit={handleSubmit}>
+         <div className="card flex-shrink-0  mx-auto  max-w-sm shadow-2xl bg-green-400">
+            <h1 className="text-3xl font-bold text-white mt-2">Login Now!</h1>
+
+            <div className="card-body">
+              <div className="form-control border-0">
+                <label className="label">
+                  <span className="label-text font-semibold text-white">Email</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="email"
+                  className="input input-bordered"
+                  name='email'
+                  required
+                  
+                />
+              </div>
+              <div className="form-control border-0">
+                <label className="label">
+                  <span className="label-text font-semibold text-white">Password</span>
+                </label>
+                <input
+                  type="password"
+                  placeholder="password"
+                  className="input input-bordered"
+                  name='password'
+                  required
+
+                />
+                <label className="label">
+                  <p className="font-semibold text-white  mt-1 mb-0 text-start ">
+                    Don't have an account? <br></br>
+                    <span className="font-semibold text-green-900">
+                      <Link to="/register">Please Register</Link>
+                    </span>
+                  </p>
+                </label>
+              </div>
+              <div className="form-control mt-1 border-0">
+                <button className="hover:bg-green-800 w-48 rounded font-bold text-xl p-2 text-center bg-green-600 place-self-center mt-2 text-white ">Login</button>
+              </div>
+              <p className="text-danger my-1">
+                {/* {error} */}
+              </p>
+              <button onClick={googleSignIn} className="btn btn-link buttonlink d-flex">
+                {" "}
+                <FcGoogle></FcGoogle> <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-600 mx-2"> Google</span>{" "}
+              </button>
+            </div>
+            
+          </div>
+          
+         </form>
+          
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Login;

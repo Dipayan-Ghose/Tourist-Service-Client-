@@ -5,6 +5,8 @@ import Services from "../Pages/Services/Services";
 import OurVision from "../Pages/OurVision/OurVision";
 import Location from "../Pages/Location/Location";
 import Blog from "../Pages/Blog/Blog";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
 
 export const routes= createBrowserRouter([
 
@@ -15,11 +17,12 @@ export const routes= createBrowserRouter([
 
             {
                 path: '/',
+                loader: ()=> fetch('http://localhost:5000/slider'),
                 element: <Home></Home>
             },
             {
                 path: '/services',
-                loader:()=> fetch('http://localhost:5000/service'),
+                loader:()=> fetch('http://localhost:5000/services'),
                 element: <Services></Services>
             },
             {
@@ -33,9 +36,15 @@ export const routes= createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
-            }
-           
-
+            },
+           {
+            path: '/login',
+            element: <Login></Login>
+           },
+            {
+            path: '/register',
+            element: <Register></Register>
+           }
 
         ]
     }

@@ -1,0 +1,66 @@
+.widht{
+    width: 70%;
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+.multiImg{
+     
+    width: 80px; 
+    height: 50px;
+    border-radius: 10px;
+}
+ .responsiveImg{
+    
+    margin: auto;
+    gap: 10px;
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    
+}
+
+.multiImg:hover{
+    width: 90px; 
+    height: 60px;
+    border-radius: 10px;
+}
+
+.imgWidth{
+    width: 340px;
+    height: 200px;
+    border-radius: 20px;
+
+}
+.limitCardWidth{
+    width: 700px;
+    height: 200px;
+    padding: 5px;    
+    background-image: url(../../../public/bg.jpg);
+
+}
+
+
+
+@media only screen and (max-Width: 500px) {
+    .widht{
+        width: 90%;
+        height: 200px;
+    }
+    .responsiveImg{
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+
+    }
+
+    .imgWidth{
+        width: 360px;
+        height: 250px;
+    }
+    .limitCardWidth{
+        width: 350px;
+        height: 350px;
+        padding: 5px;
+    }
+}

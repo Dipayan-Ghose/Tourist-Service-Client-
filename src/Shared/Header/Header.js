@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import menu from './menu.gif';
 import './Header.css';
 import { Link } from 'react-router-dom';
+import { authContext } from '../../Authentication/Auth/Auth';
 
-const Header = ({user}) => {
+const Header = () => {
+
+  const {user,providerLogout}= useContext(authContext);
+
+  const handleLogout=()=>{
+    providerLogout()
+    .then(()=>{})
+    .catch(err=>console.error(err));
+  };
+
     return (
         <div className=''>
           <div className="navbar rounded-b-lg bg-green-400 ">
@@ -44,12 +54,10 @@ const Header = ({user}) => {
   <div className="dropdown dropdown-end ">
   {
     user?
-    <li className='textDesign'><Link to="/login"><a> Login</a></Link></li>
-    :
-   <div>
+    <div>
      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-          <img src="https://placeimg.com/80/80/people" />
+          <img src={user.photoURL} />
         </div>
       </label>
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-40 ">
@@ -59,9 +67,13 @@ const Header = ({user}) => {
           </a>
         </li>
         <li className='textDesign '><Link to=''><a >Add Service</a></Link></li>
-        <li className='textDesign'><a>Logout</a></li>
+        <li className='textDesign'><a onClick={handleLogout}>Logout</a></li>
       </ul>
    </div>
+    :
+    <li className='textDesign'><Link to="/login"><a> Login</a></Link></li>
+
+   
   }
     
 
