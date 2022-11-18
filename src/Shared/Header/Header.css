@@ -6,7 +6,10 @@
     
 }
 
-.textDesign:hover{
-    
+.logo{
+    width: 35px;
+    height: 38px;
+    border-radius: 10px;
+    margin-right: 4px;   
 }
 

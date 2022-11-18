@@ -44,7 +44,7 @@
 
 //     return (
 //         <div >
-//               <div className="hero width mx-auto min-h-screen bg-blue-200 rounded my-4">
+//               <div className="hero width mx-auto bg-blue-200 rounded my-4">
 //             <div className="card flex-shrink-0 width max-w-sm shadow-2xl bg-blue-200 mx-auto my-4">
 //             <h1 className="text-3xl text-dark mt-2">Register Here</h1>
 //             <form onSubmit={handleRegistration}>

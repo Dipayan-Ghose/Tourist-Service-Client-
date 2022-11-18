@@ -1,6 +1,6 @@
 .widht{
     width: 70%;
-    height: 400px;
+    height: 380px;
     margin-top: 20px;
     border-radius: 20px;
 }
@@ -21,8 +21,8 @@
 }
 
 .multiImg:hover{
-    width: 90px; 
-    height: 60px;
+    width: 88px; 
+    height: 58px;
     border-radius: 10px;
 }
 
@@ -34,12 +34,11 @@
 }
 .limitCardWidth{
     width: 700px;
-    height: 200px;
+    height: 210px;
     padding: 5px;    
     background-image: url(../../../public/bg.jpg);
 
 }
-
 
 
 @media only screen and (max-Width: 500px) {

@@ -3,13 +3,16 @@ import { useLoaderData } from 'react-router-dom';
 import EachService from './EachService';
 import './Service.css';
 
+
+
 const Services = () => {
 const getServices= useLoaderData();
 console.log(getServices);
 
 
     return (
-        <div className='width grid bg-scroll mx-auto justify-items-center margin lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 p-4'>
+        
+        <div className='wid grid bg-scroll mx-auto justify-items-center margin lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1'>
             {
                 getServices.map(service=> <EachService 
                     key={service._id}
@@ -21,3 +24,6 @@ console.log(getServices);
 };
 
 export default Services;
+
+
+ 

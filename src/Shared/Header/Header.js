@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import menu from './menu.gif';
+import logo from './logo.png';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { authContext } from '../../Authentication/Auth/Auth';
@@ -34,8 +34,15 @@ const Header = () => {
       <li className='textDesign'><Link to="/location"><a>Location</a></Link></li>
       </ul>
     </div>
-      <Link to='/'><a className="btn glass normal-case text-xl text-green-900">Tourist Service</a>
-</Link>
+      <div className='flex align-items-center'>
+        <div>
+        <img className='logo' src={logo} alt=''></img>
+        </div>
+        <div>
+        <Link to='/'><a className="btn glass normal-case text-xl text-green-900">Tourist Service</a></Link>
+        </div>
+      </div>
+      
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal bg-green-400 rounded-box p-1 gap-1">
@@ -71,7 +78,7 @@ const Header = () => {
       </ul>
    </div>
     :
-    <li className='textDesign'><Link to="/login"><a> Login</a></Link></li>
+    <li ><Link to="/login"><button className='btn btn-ghost textDesign'>Login</button></Link></li>
 
    
   }

@@ -1,5 +1,7 @@
 import React from "react";
 import './EachService.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 
 const EachService = ({service}) => {
@@ -8,11 +10,17 @@ const EachService = ({service}) => {
     
 
   return (
+    
     <div data-aos="fade-up" data-aos-delay="80" data-aos-duration="600">
       <div className="card width m-2 bg-base-100 drop-shadow-2xl backgroundImg" >
-        <figure>
-          <img className="imgWidth p-2 mt-2" src={image_url} alt="Shoes" />
+      <PhotoProvider  maskOpacity={0.5} >
+     <PhotoView src={image_url}>
+     <figure>
+          <img className="imgWidth p-2 mt-2" src={image_url} alt="" />
         </figure>
+     </PhotoView>
+     </PhotoProvider>
+        
         <div className="card-body">
           <h2 className="text-2xl font-bold text-green-600 text-center">
            {name}
@@ -38,7 +46,20 @@ const EachService = ({service}) => {
         </div>
       </div>
     </div>
+   
   );
 };
 
 export default EachService;
+
+// return (
+  
+//     <div className="foo">
+//       {images.map((item, index) => (
+//         <PhotoView key={index} src={item}>
+//           <img src={item} alt="" />
+       
+//       ))}
+//     </div>
+  
+// );

@@ -49,13 +49,13 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero width mx-auto min-h-screen bg-green-100 rounded my-4">
+      <div className="hero width mx-auto  bg-green-100 rounded my-4">
         <div className="hero-content flex-col lg:flex-row-reverse  mx-auto">
-         <form onSubmit={handleSubmit}>
+         
          <div className="card flex-shrink-0  mx-auto  max-w-sm shadow-2xl bg-green-400">
             <h1 className="text-3xl font-bold text-white mt-2">Login Now!</h1>
-
-            <div className="card-body">
+            <form onSubmit={handleSubmit}>
+            <div className="card-body p-4">
               <div className="form-control border-0">
                 <label className="label">
                   <span className="label-text font-semibold text-white">Email</span>
@@ -93,18 +93,18 @@ const Login = () => {
               <div className="form-control mt-1 border-0">
                 <button className="hover:bg-green-800 w-48 rounded font-bold text-xl p-2 text-center bg-green-600 place-self-center mt-2 text-white ">Login</button>
               </div>
-              <p className="text-danger my-1">
+              <p className="text-danger mt-1">
                 {/* {error} */}
-              </p>
-              <button onClick={googleSignIn} className="btn btn-link buttonlink d-flex">
-                {" "}
-                <FcGoogle></FcGoogle> <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-600 mx-2"> Google</span>{" "}
-              </button>
+              </p> 
             </div>
-            
+            </form>
+            <button onClick={googleSignIn} className="btn mt-0 btn-link buttonlink d-flex">
+                {" "}
+                <FcGoogle></FcGoogle> <span className="text-xl font-bold gg text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-600 mx-2"> Google</span>{" "}
+              </button>
           </div>
           
-         </form>
+         
           
         </div>
       </div>
