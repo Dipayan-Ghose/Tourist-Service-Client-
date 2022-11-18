@@ -59,7 +59,10 @@
     }
     .limitCardWidth{
         width: 350px;
-        height: 350px;
+        height: 450px;
         padding: 5px;
+    }
+    .btnView{
+        margin-top: 10px;
     }
 }
