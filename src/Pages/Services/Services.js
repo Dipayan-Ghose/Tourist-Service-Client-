@@ -12,7 +12,7 @@ console.log(getServices);
 
     return (
         
-        <div className='wid grid bg-scroll mx-auto justify-items-center margin lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1'>
+        <div className='wid grid bg-scroll mx-auto justify-items-center  lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1'>
             {
                 getServices.map(service=> <EachService 
                     key={service._id}

@@ -16,6 +16,20 @@ const providerLogin=(provider)=>{
     return signInWithPopup(auth, provider);
 };
 
+const registerUser=(email,password)=>{
+    isLoading(true);
+    return createUserWithEmailAndPassword(auth,email, password )
+};
+
+const signInUser=(email, password)=>{
+    isLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
+};
+
+const updateUserProfile=(profile)=>{
+    return updateProfile(auth.currentUser, profile)
+};
+
 const providerLogout=()=>{
     isLoading(true);
     return signOut(auth);
@@ -33,7 +47,7 @@ useEffect(()=>{
     }
 },[])
 
-const authInfo={user, loading,providerLogin, providerLogout};
+const authInfo={user, loading,providerLogin,registerUser,signInUser,updateUserProfile, providerLogout};
     return (
         <div>
             <authContext.Provider value={authInfo}>
