@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
-import { FcGoogle, FcDown } from "react-icons/fc";
-import { FaArrowCircleDown, FaGithub } from "react-icons/fa";
-import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { FcGoogle } from "react-icons/fc";
+import { GoogleAuthProvider } from "firebase/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import './Login.css';
 import { authContext } from "../../Authentication/Auth/Auth";
-import toast, { Toaster } from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
   const navigate= useNavigate();
@@ -13,7 +14,7 @@ const Login = () => {
   const location = useLocation();
   const from= location.state?.from?.pathname || '/';
 
-  const {providerLogin,signInUser}=useContext(authContext);
+  const {providerLogin,signInUser,user}=useContext(authContext);
   const providerGoogle= new GoogleAuthProvider();
 
   const handleSubmit=(event)=>{
@@ -28,7 +29,7 @@ const Login = () => {
       form.reset();
       setError('');
       navigate(from, {replace: true});
-      toast.success('Logged In Successfully!');
+     
     })
     .catch(error=>{
      console.error(error)
@@ -37,12 +38,24 @@ const Login = () => {
 
   };
 
+  const toasty=()=>{   
+      if(user.uid){
+      toast("Logged In Successfully",{
+        position: "top-center",
+        autoClose: 2000,});
+      }
+  };
+ 
+
   const googleSignIn = () => {
     providerLogin(providerGoogle)
       .then((res) => {
         const user = res.user;
         console.log(user);
-        // navigate(from, {replace: true});
+        navigate(from, {replace: true});
+        toast("Logged In Successfully",{
+          position: "top-center",
+          autoClose: 2000,});
       })
       .catch((error) => console.error(error));
   };
@@ -93,7 +106,7 @@ const Login = () => {
                 
               </div>
               <div className="form-control mt-1 border-0">
-                <button className="hover:bg-green-800 w-48 rounded font-bold text-xl p-2 text-center bg-green-600 place-self-center mt-2 text-white ">Login</button>
+                <button onClick={toasty} className="hover:bg-green-800 w-48 rounded font-bold text-xl p-2 text-center bg-green-600 place-self-center mt-2 text-white ">Login</button>
               </div>
               <p className="text-danger mt-1">
                 {error}
@@ -105,12 +118,12 @@ const Login = () => {
               </button>
           </div>
           
-          
-  
-
-          
         </div>
       </div>
+      <ToastContainer 
+      // position="top-center"
+      // autoClose={1000}
+      />
     </div>
   );
 };

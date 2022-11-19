@@ -1,15 +1,22 @@
 import React, { useContext } from "react";
 import logo from "./logo.png";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../../Authentication/Auth/Auth";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Header = () => {
   const { user, providerLogout } = useContext(authContext);
+  const navigate= useNavigate();
 
   const handleLogout = () => {
     providerLogout()
-      .then(() => {})
+      .then(() => {
+        toast('Logging Out', {position: "top-center",
+        autoClose: 1500});
+        navigate('/');
+      })
       .catch((err) => console.error(err));
   };
 
@@ -176,6 +183,8 @@ const Header = () => {
         </div>
        
       </div>
+      <ToastContainer
+      />
     </div>
   );
 };
