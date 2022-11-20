@@ -4,7 +4,9 @@ import '../Home/Home.css';
 
 const Blog = () => {
   return (
-    <div className=" mx-auto my-10 statistics">
+    <div className=" mx-auto my-10 statistics" data-aos="zoom-in"
+    data-aos-delay="80"
+    data-aos-duration="1000">
       <div
         tabIndex={0}
         className="collapse collapse-arrow border rounded-box"

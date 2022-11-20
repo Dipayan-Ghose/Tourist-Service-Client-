@@ -2,6 +2,7 @@ import React from "react";
 import './EachService.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { Link } from "react-router-dom";
 
 
 const EachService = ({service}) => {
@@ -42,7 +43,8 @@ const EachService = ({service}) => {
             <div className="badge badge-primary badge-outline p-3 text-green-700 " >Place Rating: {rating.number}</div>
             <div className="badge badge-primary badge-outline p-3 text-green-700"> Cost: {cost}Tk</div>
           </div>
-          <button className="  w-28 rounded p-1 text-center bg-lime-700 place-self-center mt-2 text-white ">View Details</button>
+            <Link to={`/services/${_id}`}><button className="  w-28 rounded p-1 text-center bg-lime-700 place-self-center mt-2 text-white ">View Details</button>
+</Link>
         </div>
       </div>
     </div>

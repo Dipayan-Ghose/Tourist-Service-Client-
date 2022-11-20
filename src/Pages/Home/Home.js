@@ -29,7 +29,6 @@ const Home = () => {
 
   }
 
-
   useEffect(()=>{
     const items=JSON.parse(localStorage.getItem('like'));
     if(items){
