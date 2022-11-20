@@ -12,7 +12,7 @@ console.log(getServices);
 
     return (
         <div>
-<div className='text-center my-8'>
+<div className='text-center my-8' data-aos="zoom-in" data-aos-delay="80" data-aos-duration="1000">
     <h1 className='text-3xl font-semibold text-green-800 '>Let's Checkout Our Services</h1>
         <p className='text-green-700 mt-1'>
             WE ARE HERE TO MAKE YOUR LIFE MORE EASIER.<br></br> BRING YOUR HAND TO US & ENJOY THE BEAUTY OF BANGLADESH.

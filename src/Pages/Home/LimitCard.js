@@ -13,7 +13,7 @@ const LimitCard = ({ singleService }) => {
         className="flex justify-center"
         data-aos="fade-left"
         data-aos-delay="80"
-        data-aos-duration="700"
+        data-aos-duration="1000"
       >
         <div className="card lg:card-side  bg-base-100 shadow-2xl limitCardWidth m-2">
         <PhotoProvider  maskOpacity={0.5} >

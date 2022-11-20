@@ -7,7 +7,7 @@ const Home = () => {
   const getServices = useLoaderData();
   const [slider, nextSlider] = useState(getServices[0]);
   const [limitService, setLimitService] = useState([]);
-  const [like, setLike]= useState([3]);
+  const [like, setLike]= useState([4250]);
 
   const sliderClick = (index) => {
     console.log("click");
@@ -43,7 +43,7 @@ const Home = () => {
         className="justify-content-center mb-5 "
         data-aos="fade-up"
         data-aos-delay="80"
-        data-aos-duration="600"
+        data-aos-duration="800"
       >       
       <h2 class="absolute text-3xl text-white top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2">Want To Enjoy This Beauty?<br></br> <p className="text-sm">Check Our Services</p></h2>
         <img
@@ -81,15 +81,17 @@ const Home = () => {
       <div
         className="mb-5"
         data-aos="fade-up"
-        data-aos-delay="40"
-        data-aos-duration="400"
+        data-aos-delay="60"
+        data-aos-duration="600"
       >
         <button className="btn btn-primary w-48 mt-2">
           <Link to="/services">See All</Link>
         </button>
       </div>
 
-      <div>
+      <div  data-aos="zoom-in"
+        data-aos-delay="80"
+        data-aos-duration="1000">
       <div className="stats stats-vertical lg:stats-horizontal shadow-2xl statistics mt-5 mb-12">
   
   <div className="stat">
@@ -97,7 +99,7 @@ const Home = () => {
       <svg onClick={rate} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
     </div>
     <div className="stat-title">Total Likes</div>
-    <div className="stat-value text-primary">{like}K</div>
+    <div className="stat-value text-primary">{like}</div>
     <div className="stat-title">Press The Love Icon</div>
   </div>
   
@@ -125,6 +127,18 @@ const Home = () => {
   
 </div>
       </div>
+      <div className="card w-96 mb-8 bg-green-100 shadow-lg mx-auto image-full" data-aos="flip-down"
+        data-aos-delay="80"
+        data-aos-duration="1000">
+  <figure><img src="https://picsum.photos/400/220" alt="blog" /></figure>
+  <div className="card-body">
+    <h2 className="mb-3 text-2xl text-white font-bold text-center">Blogs</h2>
+    <p className="text-white font-semibold text-center">Checkout Our Blogs Now!</p>
+    <div className="card-actions justify-center">
+      <Link to='/blogs'><button className="btn btn-primary ">Blogs</button></Link>
+    </div>
+  </div>
+</div>
     </div>
   );
 };

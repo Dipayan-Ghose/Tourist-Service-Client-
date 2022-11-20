@@ -34,7 +34,7 @@ export const routes= createBrowserRouter([
                 element: <Location></Location>
             },
             {
-                path: '/blog',
+                path: '/blogs',
                 element: <Blog></Blog>
             },
            {
