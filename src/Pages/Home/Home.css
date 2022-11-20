@@ -40,6 +40,11 @@
 
 }
 
+.statistics{
+    background-image: url(../../../public/bg.jpg);
+    width: 70%;
+}
+
 
 @media only screen and (max-Width: 500px) {
     .widht{
@@ -64,5 +69,8 @@
     }
     .btnView{
         margin-top: 10px;
+    }
+    .statistics{
+        width: 80%;
     }
 }

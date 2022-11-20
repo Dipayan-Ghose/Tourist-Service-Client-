@@ -11,8 +11,15 @@ console.log(getServices);
 
 
     return (
-        
-        <div className='wid grid bg-scroll mx-auto justify-items-center  lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1'>
+        <div>
+<div className='text-center my-8'>
+    <h1 className='text-3xl font-semibold text-green-800 '>Let's Checkout Our Services</h1>
+        <p className='text-green-700 mt-1'>
+            WE ARE HERE TO MAKE YOUR LIFE MORE EASIER.<br></br> BRING YOUR HAND TO US & ENJOY THE BEAUTY OF BANGLADESH.
+        </p>
+</div>
+
+  <div className='wid grid bg-scroll mx-auto justify-items-center  lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1'>
             {
                 getServices.map(service=> <EachService 
                     key={service._id}
@@ -20,6 +27,9 @@ console.log(getServices);
                 ></EachService>)
             }
         </div>
+        </div>
+        
+      
     );
 };
 
