@@ -64,10 +64,10 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero width mx-auto  bg-green-100 rounded my-4">
-        <div className="hero-content flex-col lg:flex-row-reverse alert alert-info mx-auto">
+      <div className="hero width mx-auto  rounded my-4">
+        <div className="hero-content flex-col lg:flex-row-reverse  mx-auto  bg-green-100">
          
-         <div className="card flex-shrink-0 width mx-auto  max-w-sm shadow-2xl bg-green-400">
+         <div className="card flex-shrink-0 mx-auto  max-w-sm shadow-2xl bg-green-400">
             <h1 className="text-3xl font-bold text-white mt-2">Login Now!</h1>
             <form onSubmit={handleSubmit}>
             <div className="card-body p-4">
@@ -110,11 +110,11 @@ const Login = () => {
               </div>
               <p className="text-danger mt-1">
                 {error}
-              </p> 
+              </p>
             </div>
             </form>
-            <button onClick={googleSignIn} className="alert alert-info btn mt-0 btn-link buttonlink d-flex">
-                <FcGoogle></FcGoogle> <span className="text-xl font-bold gg text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-600 mx-2"> Google</span>{" "}
+            <button onClick={googleSignIn} className="alert alert-info btn mb-3 btn-link buttonlink d-flex">
+                <FcGoogle></FcGoogle> <span className="text-xl font-bold gg text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-600 "> Google</span>{" "}
               </button>
           </div>
           

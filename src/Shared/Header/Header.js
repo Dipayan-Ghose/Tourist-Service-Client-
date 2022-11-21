@@ -141,7 +141,10 @@ const Header = () => {
             <div className=" flex">
              <ul className="menu menu-horizontal bg-green-400 rounded-box p-1 gap-1">
                 <li className="textDesign">
-                  <a className="">My Reviews</a>
+                <Link to="/myReview">
+                <a className="">My Reviews</a>
+              </Link>
+                 
                 </li>
                 <li className="textDesign ">
                   <Link to="">
