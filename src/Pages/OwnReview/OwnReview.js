@@ -6,13 +6,33 @@ import './OwnReview.css';
 const MyReview = () => {
 const {user}= useContext(authContext);
 const [review, setReview]= useState([]);
+const [del, setDel]=useState([]);
 
 useEffect(()=>{
-    fetch(`http://localhost:5000/my_reviews?email=${user.email}`)
+    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
     .then(res=>res.json())
     .then(data=> setReview(data))
     .catch(err=>console.log(err))
-},[user?.email])
+},[del]);
+
+const handleDelete=(id)=>{
+  const msg=window.confirm('Want to delete this service?');
+  if(msg){
+    fetch(`http://localhost:5000/reviews/${id}`,{
+      method: 'DELETE'
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data)
+      if(data.deletedCount>0){
+        alert('Deleted');
+        const remaining= review.filter(re=>re._id !== id);
+        setDel(remaining);
+      }
+    })
+    .catch(err=>console.log(err))
+  }
+  };
 
 
 
@@ -34,10 +54,15 @@ useEffect(()=>{
                 review.map(row=> <ReviewRows 
                     key={row._id}
                     row={row}
-                ></ReviewRows>)
+                    handleDelete={handleDelete}
+                ></ReviewRows>) 
+                
+            
             }
           </tbody>
         </table>
+       
+        
       </div>
     </div>
   );
