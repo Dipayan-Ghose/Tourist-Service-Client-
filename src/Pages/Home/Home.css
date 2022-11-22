@@ -33,7 +33,7 @@
 
 }
 .limitCardWidth{
-    width: 700px;
+    width: 60%;
     height: 210px;
     padding: 5px;    
     background-image: url(../../../public/bg.jpg);
