@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ServiceDetails from "../Pages/SeviceDetails/ServiceDetails";
 import OwnReview from "../Pages/OwnReview/OwnReview";
+import AddService from "../Pages/AddService/AddService";
 
 
 export const routes= createBrowserRouter([
@@ -58,7 +59,12 @@ export const routes= createBrowserRouter([
            {
             path: '/myReview',
             element: <OwnReview></OwnReview>
+           },
+           {
+            path: '/addService',
+            element: <AddService></AddService>
            }
+
 
         ]
     }

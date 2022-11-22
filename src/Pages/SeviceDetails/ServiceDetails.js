@@ -72,7 +72,7 @@ useEffect(() => {
 
               <div className="grid md:hidden:overflow-x-scroll  overflow-y-scroll height">
                 <table className="table-normal ">
-                  <thead>
+                  <thead className="">
                     <tr>
                       <th>Name</th>
                       <th>Comments</th>

@@ -114,7 +114,7 @@ const Login = () => {
             </div>
             </form>
             <button onClick={googleSignIn} className="alert alert-info btn mb-3 btn-link buttonlink d-flex">
-                <FcGoogle></FcGoogle> <span className="text-xl font-bold gg text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-600 "> Google</span>{" "}
+                <span className="text-xl font-bold gg text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-600 "> Google</span>{" "}
               </button>
           </div>
           

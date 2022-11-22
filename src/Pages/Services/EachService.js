@@ -12,8 +12,8 @@ const EachService = ({service}) => {
 
   return (
     
-    <div data-aos="fade-up" data-aos-delay="80" data-aos-duration="1000">
-      <div className="card width m-2 bg-base-100 drop-shadow-2xl backgroundImg" >
+    <div className="flex justify-center" data-aos="fade-up" data-aos-delay="80" data-aos-duration="1000">
+      <div className="card width m-3 bg-base-100 drop-shadow-2xl backgroundImg" >
       <PhotoProvider  maskOpacity={0.5} >
      <PhotoView src={image_url}>
      <figure>
@@ -54,14 +54,3 @@ const EachService = ({service}) => {
 
 export default EachService;
 
-// return (
-  
-//     <div className="foo">
-//       {images.map((item, index) => (
-//         <PhotoView key={index} src={item}>
-//           <img src={item} alt="" />
-       
-//       ))}
-//     </div>
-  
-// );

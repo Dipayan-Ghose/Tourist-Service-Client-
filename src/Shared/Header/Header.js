@@ -110,7 +110,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal bg-green-400 rounded-box p-1 gap-1">
             <li className="textDesign ">
               <Link to="/">
@@ -149,7 +149,7 @@ const Header = () => {
                  
                 </li>
                 <li className="textDesign ">
-                  <Link to="">
+                  <Link to="/addService">
                     <a>Add Service</a>
                   </Link>
                 </li>
@@ -179,7 +179,7 @@ const Header = () => {
           user?
            <label tabIndex={0} className="btn btn-ghost btn-circle avatar ">
            <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-             <img src={user.photoURL} />
+             <img src={user?.photoURL} alt={user?.displayName}/>
            </div>
          </label>
          :
