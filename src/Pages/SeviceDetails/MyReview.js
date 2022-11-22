@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { authContext } from "../../Authentication/Auth/Auth";
-
+import { toast } from 'react-toastify';
+import './ServiceDetails.css';
 
 const MyReview = ({getDetails}) => {
  const {_id, name}= getDetails;
@@ -23,8 +24,11 @@ const MyReview = ({getDetails}) => {
         comment
     };
 
-    if(comment.length<2){
-        alert('Please Add a Meaningful Comment')
+    
+      if(comment.length<2){
+        toast.error('Please Add a Meaningful Comment',{
+          position: "top-center",
+          autoClose: 1200,});
     }
     else{
         fetch('http://localhost:5000/reviews',{
@@ -38,22 +42,24 @@ const MyReview = ({getDetails}) => {
         .then(data=> {
             console.log(data)
             if(data.acknowledged){
-                alert('Review Added')
+              toast.success('Review Added',{
+                    position: "top-center",
+                    autoClose: 1200,});
                 form.reset();
+                // window.location.reload();
             }
         })
         .catch(er=> console.log(er));
 
-    }
 
+    }
+    
 };   
 
-   
-
   return (
-    <div>
+    <div className="">
       <form onSubmit={handleOrder}>
-      <div className="card inputWidth mx-auto  bg-green-100 rounded-box m-5 p-5">
+      <div className="card mx-auto bg-green-100 rounded-box my-5 p-5">
         <h1 className="text-2xl mb-5 text-green-700 font-bold text-center ">
           Add Your Review
         </h1>
@@ -90,11 +96,15 @@ const MyReview = ({getDetails}) => {
         >
           
         </textarea>
-        <input type="submit" className="btn btn-primary mt-5 w-64 mx-auto " value="Add Your Review" />
+        <div className="">
+        <input type="submit" className="btn btn-primary mt-5 w-auto mx-auto " value="Add Your Review" />
+        </div>
       </div>
       </form>
+      
     </div>
   );
 };
 
 export default MyReview;
+

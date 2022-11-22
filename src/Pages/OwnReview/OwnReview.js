@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { authContext } from "../../Authentication/Auth/Auth";
 import ReviewRows from "./ReviewRows";
 import './OwnReview.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const MyReview = () => {
 const {user}= useContext(authContext);
@@ -16,7 +17,7 @@ useEffect(()=>{
 },[del]);
 
 const handleDelete=(id)=>{
-  const msg=window.confirm('Want to delete this service?');
+  const msg=window.confirm('Want to delete this review?');
   if(msg){
     fetch(`http://localhost:5000/reviews/${id}`,{
       method: 'DELETE'
@@ -25,7 +26,10 @@ const handleDelete=(id)=>{
     .then(data=>{
       console.log(data)
       if(data.deletedCount>0){
-        alert('Deleted');
+        toast.error('Deleted Successfully',{
+          icon: '❌',
+          position: "top-center",
+          autoClose: 1000,});
         const remaining= review.filter(re=>re._id !== id);
         setDel(remaining);
       }
@@ -39,17 +43,17 @@ const handleDelete=(id)=>{
   return (
     <div>
       
-      <div className="grid flex-grow my-5 p-5 card bg-green-100 rounded-box mx-auto width">
-        <table className="table ">
+      <div data-aos="fade-left" data-aos-delay="80" data-aos-duration="1000" className="grid md:hidden:overflow-x-scroll overflow-y-scroll height flex-grow my-5 p-5 card bg-green-100 rounded-box mx-auto width">
+        <table className="table-normal ">
           <thead>
-            <tr>
+            <tr className="">
               <th>User Name</th>
               <th>Service Name</th>
               <th>Comments</th>
               <th>Options</th>
             </tr>
           </thead>
-          <tbody className="">
+          <tbody >
             {
                 review.map(row=> <ReviewRows 
                     key={row._id}

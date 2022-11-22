@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { authContext } from '../../Authentication/Auth/Auth';
 import './OwnReview.css';
+import { FcDeleteRow } from 'react-icons/fc';
+import {FaEdit} from 'react-icons/fa';
 
 const ReviewRows = ({row,handleDelete}) => {
     const {user}= useContext(authContext);
@@ -40,9 +42,9 @@ const ReviewRows = ({row,handleDelete}) => {
               <h1>No reviews were added</h1>
               }
               
-              <th>
-                <button className="btn btn-warning btn-xs mr-4">Edit Review</button>
-                <button onClick={()=>handleDelete(_id)} className="btn btn-error btn-xs">Delete Review</button>
+              <th className='flex flex-nowrap'>
+                <button className="btn btn-warning btn-xs mr-4"><FaEdit className='mr-1'></FaEdit> Edit Review</button>
+                <button onClick={()=>handleDelete(_id)} className="btn btn-error btn-xs"><FcDeleteRow className='mr-1'></FcDeleteRow> Delete Review</button>
               </th>
             </tr>
                  

@@ -74,10 +74,12 @@ const Header = () => {
               {user ? (
                 <div>
                   <li className="textDesign">
-                    <a>My Reviews</a>
+                  <Link to="/myReview">
+                <a className="">My Reviews</a>
+              </Link>
                   </li>
                   <li className="textDesign ">
-                    <Link to="">
+                    <Link to="/addService">
                       <a>Add Service</a>
                     </Link>
                   </li>
