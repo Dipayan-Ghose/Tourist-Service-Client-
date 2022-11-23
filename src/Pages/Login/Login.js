@@ -6,9 +6,12 @@ import './Login.css';
 import { authContext } from "../../Authentication/Auth/Auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useHelmet from "../../Helmet/useHelmet";
 
 
 const Login = () => {
+  useHelmet('Login');
+
   const navigate= useNavigate();
   const [error, setError]= useState('');
   const location = useLocation();
@@ -64,10 +67,10 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero width mx-auto  rounded my-4">
-        <div className="hero-content flex-col lg:flex-row-reverse  mx-auto  bg-green-100">
+      <div className="hero  mx-auto  rounded my-4">
+        <div className="py-5 width flex-col lg:flex-row-reverse  bg-green-100">
          
-         <div className="card flex-shrink-0 mx-auto  max-w-sm shadow-2xl bg-green-400">
+         <div className="card  flex-shrink-0 mx-auto  max-w-sm shadow-2xl bg-green-400">
             <h1 className="text-3xl font-bold text-white mt-2">Login Now!</h1>
             <form onSubmit={handleSubmit}>
             <div className="card-body p-4">

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import useHelmet from "../../Helmet/useHelmet";
 import "./Home.css";
 import LimitCard from "./LimitCard";
 
 const Home = () => {
+  useHelmet('Home');
+
   const getServices = useLoaderData();
   const [slider, nextSlider] = useState(getServices[0]);
   const [limitService, setLimitService] = useState([]);

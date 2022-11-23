@@ -1,9 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { authContext } from '../../Authentication/Auth/Auth';
+import useHelmet from '../../Helmet/useHelmet';
 import './Register.css';
 
 const Register = () => {
+  useHelmet('Register');
+
 
 const {registerUser, updateUserProfile}= useContext(authContext);
 const [error, setError]= useState('');
@@ -113,6 +116,7 @@ updateUserProfile(profile)
             
           </div>
           </div>
+          
         </div>
     );
 };

@@ -1,7 +1,15 @@
 .width{
-    width: 380px;
+    width: 480px;
     border-radius: 20px;
 }
 .buttonlink{
     text-decoration: none;
 }
+
+@media only screen and (max-Width: 500px) {
+    .width{
+        width: 380px;
+       
+    };
+    
+};

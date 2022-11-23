@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { toast } from 'react-toastify';
+import useHelmet from "../../Helmet/useHelmet";
 
 
 const AddService = () => {
-    
+ useHelmet('Add Service');
 
     const handleService=(event)=>{
         event.preventDefault();
@@ -59,7 +60,7 @@ const AddService = () => {
   return (
     <div className="">
     <form onSubmit={handleService}>
-      <div className="flex items-center justify-center p-12 ">
+      <div className=" bg-green-100 flex items-center justify-center p-12 ">
         <div className="mx-auto w-full max-w-[550px]">
             <div className="-mx-3 flex flex-wrap">
               <div className="w-full px-3 sm:w-1/2">

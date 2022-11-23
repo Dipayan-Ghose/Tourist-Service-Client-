@@ -1,8 +1,11 @@
 import React from "react";
 import "./Blog.css";
 import "../Home/Home.css";
+import useHelmet from "../../Helmet/useHelmet";
 
 const Blog = () => {
+  useHelmet('Blog');
+
   return (
     <div
       className=" mx-auto my-10 statistics"

@@ -1,9 +1,12 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useHelmet from "../../Helmet/useHelmet";
 import EachService from "./EachService";
 import "./Service.css";
 
 const Services = () => {
+  useHelmet('Services');
+
   const getServices = useLoaderData();
   console.log(getServices);
 

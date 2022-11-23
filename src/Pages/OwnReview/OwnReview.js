@@ -3,8 +3,11 @@ import { authContext } from "../../Authentication/Auth/Auth";
 import ReviewRows from "./ReviewRows";
 import './OwnReview.css';
 import { ToastContainer, toast } from 'react-toastify';
+import useHelmet from "../../Helmet/useHelmet";
 
 const MyReview = () => {
+  useHelmet('My Review');
+
 const {user}= useContext(authContext);
 const [review, setReview]= useState([]);
 const [del, setDel]=useState([]);
@@ -38,6 +41,37 @@ const handleDelete=(id)=>{
   }
   };
 
+  const handleChange=(e)=>{
+    const field= e.target.name;
+    const value= e.target.value;
+    const newUser= {...del}
+    newUser[field]=value;
+    console.log(newUser);
+    setDel(newUser);
+  };
+
+  const handleUpdate=(event)=>{
+    event.preventDefault();
+    console.log(del);
+
+    fetch(`http://localhost:5000/reviews/${del._id}`, {
+      method: 'PATCH',
+      headers: {
+          'content-type': 'application/json'
+          // authorization: `Bearer ${localStorage.getItem('genius-token')}`
+      },
+      body: JSON.stringify(del)
+      })
+      .then(res => res.json())
+      .then(data => {
+          console.log(data);
+          if (data.modifiedCount > 0) {
+              alert('updated');
+              setDel(data);
+          }
+      })
+  };
+
 
 
   return (
@@ -59,6 +93,8 @@ const handleDelete=(id)=>{
                     key={row._id}
                     row={row}
                     handleDelete={handleDelete}
+                    handleUpdate={handleUpdate}
+                    handleChange={handleChange}
                 ></ReviewRows>) 
                 
             

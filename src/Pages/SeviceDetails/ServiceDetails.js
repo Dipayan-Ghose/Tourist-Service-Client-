@@ -5,9 +5,12 @@ import AllReview from "./AllReview";
 import MyReview from "./MyReview";
 import "./ServiceDetails.css";
 import axios from 'axios'
+import useHelmet from "../../Helmet/useHelmet";
 
 
 const ServiceDetails = () => {
+  useHelmet('Service Details');
+
   const getDetails = useLoaderData();
   const{user}= useContext(authContext);
   const {_id, name, details, cost } = getDetails;
