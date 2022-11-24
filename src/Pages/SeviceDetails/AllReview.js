@@ -10,7 +10,7 @@ const AllReview = ({eachReview}) => {
 <td>
   <div className="flex items-center space-x-3">
     <div className="avatar">
-      <div className="mask mask-squircle w-12 h-12">
+      <div className="mask mask-squircle w-12 ">
         <img
           src={user?.photoURL}                         
           alt=""

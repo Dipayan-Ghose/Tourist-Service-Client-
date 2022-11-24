@@ -2,6 +2,12 @@
     width: 80%;
 }
 
-.height{
-    height: 500px;
+.Oheight{
+    height: 20%;
+}
+
+.trHeight{
+    height: 150px;
+    border: 2px solid green;
+
 }

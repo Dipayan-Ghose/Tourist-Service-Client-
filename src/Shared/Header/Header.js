@@ -160,10 +160,12 @@ const Header = () => {
               <div className=" ml-5 ">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar ">
                 <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                  <img src={user.photoURL} />
+                  <img alt={user.displayName} src={user.photoURL} />
                 </div>
               </label>
+              
               </div>
+              <h1 className="ml-5 textDesign thisName">WELCOME, {user?.displayName}</h1>
             </div>
           ) : (
             <li>

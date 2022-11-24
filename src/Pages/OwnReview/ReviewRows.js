@@ -12,9 +12,9 @@ const ReviewRows = ({ row, handleDelete, handleUpdate,handleChange }) => {
   
 
   return (
-    <tr>
-      <td>
-        <div className="flex items-center space-x-3">
+    <tr className=" ">
+      <td className=""> 
+        <div className="flex align-item-center space-x-3">
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
               <img src={user?.photoURL} alt="" />
@@ -37,7 +37,7 @@ const ReviewRows = ({ row, handleDelete, handleUpdate,handleChange }) => {
         <h1>No reviews were added</h1>
       )}
 
-      <th className="flex flex-nowrap">
+      <th className="flex flex-nowrap ">
         <label htmlFor="my-modal-6" className="btn btn-warning btn-xs mr-4">
           <FaEdit className="mr-1"></FaEdit>Edit Review
         </label>
@@ -101,7 +101,7 @@ const ReviewRows = ({ row, handleDelete, handleUpdate,handleChange }) => {
         </div>
         <label
           onClick={() => handleDelete(_id)}
-          className="btn btn-error btn-xs"
+          className="btn btn-error btn-xs align-center"
         >
           <FcDeleteRow className="mr-1"></FcDeleteRow> Delete Review
         </label>

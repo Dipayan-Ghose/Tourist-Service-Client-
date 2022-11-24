@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { authContext } from "../../Authentication/Auth/Auth";
 import ReviewRows from "./ReviewRows";
 import './OwnReview.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import useHelmet from "../../Helmet/useHelmet";
 
 const MyReview = () => {
@@ -13,7 +13,7 @@ const [review, setReview]= useState([]);
 const [del, setDel]=useState([]);
 
 useEffect(()=>{
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+    fetch(`http://localhost:5000/revieww?email=${user?.email}`)
     .then(res=>res.json())
     .then(data=> setReview(data))
     .catch(err=>console.log(err))
@@ -52,13 +52,12 @@ const handleDelete=(id)=>{
 
   const handleUpdate=(event)=>{
     event.preventDefault();
-    console.log(del);
+    console.log('Clicked');
 
     fetch(`http://localhost:5000/reviews/${del._id}`, {
       method: 'PATCH',
       headers: {
           'content-type': 'application/json'
-          // authorization: `Bearer ${localStorage.getItem('genius-token')}`
       },
       body: JSON.stringify(del)
       })
@@ -77,7 +76,7 @@ const handleDelete=(id)=>{
   return (
     <div>
       
-      <div data-aos="fade-left" data-aos-delay="80" data-aos-duration="1000" className="grid md:hidden:overflow-x-scroll overflow-y-scroll height flex-grow my-5 p-5 card bg-green-100 rounded-box mx-auto width">
+      <div data-aos="fade-left" data-aos-delay="80" data-aos-duration="1000" className="grid md:hidden:overflow-x-scroll overflow-y-scroll Oheight flex-grow my-5 p-5 card bg-green-100 rounded-box mx-auto width">
         <table className="table-normal ">
           <thead>
             <tr className="">
@@ -87,7 +86,7 @@ const handleDelete=(id)=>{
               <th>Options</th>
             </tr>
           </thead>
-          <tbody >
+          <tbody className="">
             {
                 review.map(row=> <ReviewRows 
                     key={row._id}

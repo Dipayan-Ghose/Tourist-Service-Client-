@@ -13,3 +13,9 @@
     
 }
 
+@media only screen and (max-Width: 600px) {
+    .thisName{
+        display: none;
+    }
+}
+

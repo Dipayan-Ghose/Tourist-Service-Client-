@@ -24,19 +24,20 @@ const [service, setService]= useState([]);
 //     })()
 // }, [])
 
-useEffect(() => {
-  fetch(`http://localhost:5000/services/${_id}`)
-    .then((res) => res.json())
-    .then((data) => {
-      setService(data)
-    })
-    .catch((err) => console.log(err));
-}, []);
+// useEffect(() => {
+//   fetch(`http://localhost:5000/services/${_id}`)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       setService(data)
+//     })
+//     .catch((err) => console.log(err));
+// }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch(`http://localhost:5000/review?serviceId=${_id}`)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         // if(data){
         //   const remaining= rev.filter(re=>re.serviceId === service._id);
         //   console.log(remaining)
@@ -73,7 +74,7 @@ useEffect(() => {
                 Reviews
               </h1>
 
-              <div className="grid md:hidden:overflow-x-scroll  overflow-y-scroll height">
+              <div className="grid md:hidden:overflow-x-scroll  overflow-y-scroll Sheight">
                 <table className="table-normal ">
                   <thead className="">
                     <tr>
