@@ -30,12 +30,10 @@ const ReviewRows = ({ row, handleDelete, handleUpdate,handleChange }) => {
         {service}
         <br />
       </td>
-
-      {comment.length !== 0 ? (
-        <td>{comment}</td>
-      ) : (
-        <h1>No reviews were added</h1>
-      )}
+      <td>
+        {comment}
+        <br />
+      </td>
 
       <th className="flex flex-nowrap ">
         <label htmlFor="my-modal-6" className="btn btn-warning btn-xs mr-4">
@@ -43,8 +41,8 @@ const ReviewRows = ({ row, handleDelete, handleUpdate,handleChange }) => {
         </label>
         {/* The button to open modal */}
         <input type="checkbox" id="my-modal-6" className="modal-toggle" />
-        <div className="modal modal-middle">
-          <div className="modal-box">
+        <div className="modal modal-middle ">
+          <div className="modal-box modalHeight" >
             <label
               htmlFor="my-modal-6"
               className="btn btn-primary btn-sm btn-circle absolute right-2 top-2"

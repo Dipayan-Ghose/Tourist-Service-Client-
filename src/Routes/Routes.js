@@ -3,7 +3,6 @@ import Home from "../Pages/Home/Home";
 import Main from "../Main/Main";
 import Services from "../Pages/Services/Services";
 import OurVision from "../Pages/OurVision/OurVision";
-import Location from "../Pages/Location/Location";
 import Blog from "../Pages/Blog/Blog";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
@@ -40,10 +39,6 @@ export const routes= createBrowserRouter([
             {
                 path: '/vision',
                 element: <OurVision></OurVision>
-            },
-            {
-                path: '/location',
-                element: <Location></Location>
             },
             {
                 path: '/blogs',

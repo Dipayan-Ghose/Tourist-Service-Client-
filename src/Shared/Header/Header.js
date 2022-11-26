@@ -57,7 +57,7 @@ const Header = () => {
               </li>
               <li className="textDesign">
                 <Link to="/vision">
-                  <a>Our Vision</a>
+                  <a>Our Achievments</a>
                 </Link>
               </li>
               <li className="textDesign">
@@ -65,11 +65,7 @@ const Header = () => {
                   <a> Blog</a>
                 </Link>
               </li>
-              <li className="textDesign">
-                <Link to="/location">
-                  <a>Location</a>
-                </Link>
-              </li>
+              
 
               {user ? (
                 <div>
@@ -124,7 +120,7 @@ const Header = () => {
             </li>
             <li className="textDesign">
               <Link to="/vision">
-                <a>Our Vision</a>
+                <a>Our Achievments</a>
               </Link>
             </li>
             <li className="textDesign">
@@ -132,11 +128,7 @@ const Header = () => {
                 <a> Blog</a>
               </Link>
             </li>
-            <li className="textDesign">
-              <Link to="/location">
-                <a>Location</a>
-              </Link>
-            </li>
+           
           </ul>
 
           {user? (

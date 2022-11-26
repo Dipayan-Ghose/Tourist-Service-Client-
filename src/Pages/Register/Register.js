@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { authContext } from '../../Authentication/Auth/Auth';
 import useHelmet from '../../Helmet/useHelmet';
 import './Register.css';
@@ -10,6 +10,7 @@ const Register = () => {
 
 const {registerUser, updateUserProfile}= useContext(authContext);
 const [error, setError]= useState('');
+const navigate=useNavigate();
 
 const handleRegistration=(e)=>{
 e.preventDefault();
@@ -26,6 +27,7 @@ registerUser(email, password)
         console.log(user);
         form.reset();
         handleUpdate(name,photo);
+        navigate('/');
       })
       .catch((error) => {
         console.error(error);

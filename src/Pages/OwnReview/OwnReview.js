@@ -8,22 +8,36 @@ import useHelmet from "../../Helmet/useHelmet";
 const MyReview = () => {
   useHelmet('My Review');
 
-const {user}= useContext(authContext);
+const {user, providerLogout}= useContext(authContext);
 const [review, setReview]= useState([]);
 const [del, setDel]=useState([]);
 
 useEffect(()=>{
-    fetch(`http://localhost:5000/revieww?email=${user?.email}`)
-    .then(res=>res.json())
-    .then(data=> setReview(data))
+    fetch(`http://localhost:5000/revieww?email=${user?.email}`, {
+      headers: {
+          authorization: `Bearer ${localStorage.getItem('tourist-token')}`
+      }
+  })
+      .then(res => {
+          if (res.status === 401 || res.status === 403) {
+              return providerLogout();
+          }
+          return res.json();
+      })
+      .then(data => {
+        setReview(data);
+      })
     .catch(err=>console.log(err))
-},[del]);
+},[del, providerLogout]);
 
 const handleDelete=(id)=>{
   const msg=window.confirm('Want to delete this review?');
   if(msg){
     fetch(`http://localhost:5000/reviews/${id}`,{
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('tourist-token')}`
+    }
     })
     .then(res=>res.json())
     .then(data=>{
@@ -57,7 +71,8 @@ const handleDelete=(id)=>{
     fetch(`http://localhost:5000/reviews/${del._id}`, {
       method: 'PATCH',
       headers: {
-          'content-type': 'application/json'
+          'content-type': 'application/json',
+          authorization: `Bearer ${localStorage.getItem('tourist-token')}`
       },
       body: JSON.stringify(del)
       })
@@ -75,7 +90,6 @@ const handleDelete=(id)=>{
 
   return (
     <div>
-      
       <div data-aos="fade-left" data-aos-delay="80" data-aos-duration="1000" className="grid md:hidden:overflow-x-scroll overflow-y-scroll Oheight flex-grow my-5 p-5 card bg-green-100 rounded-box mx-auto width">
         <table className="table-normal ">
           <thead>
@@ -87,6 +101,8 @@ const handleDelete=(id)=>{
             </tr>
           </thead>
           <tbody className="">
+       
+
             {
                 review.map(row=> <ReviewRows 
                     key={row._id}
@@ -95,11 +111,14 @@ const handleDelete=(id)=>{
                     handleUpdate={handleUpdate}
                     handleChange={handleChange}
                 ></ReviewRows>) 
-                
+            }   
             
-            }
+            
           </tbody>
+
         </table>
+        <h1 className="text-center ">{review.length===0 && 'No Reviews Were Added'} </h1>
+
        
         
       </div>

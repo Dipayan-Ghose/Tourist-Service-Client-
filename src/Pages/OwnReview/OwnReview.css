@@ -3,11 +3,15 @@
 }
 
 .Oheight{
-    height: 20%;
+    height: 300px;
 }
 
 .trHeight{
     height: 150px;
     border: 2px solid green;
 
+}
+
+.modalHeight{
+    height: 300px;
 }
