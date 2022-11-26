@@ -24,17 +24,10 @@ const [service, setService]= useState([]);
 //     })()
 // }, [])
 
-// useEffect(() => {
-//   fetch(`http://localhost:5000/services/${_id}`)
-//     .then((res) => res.json())
-//     .then((data) => {
-//       setService(data)
-//     })
-//     .catch((err) => console.log(err));
-// }, []);
+
 
   useEffect(() => {
-    fetch(`http://localhost:5000/review?serviceId=${_id}`)
+    fetch(`https://tourist-service-server-ecru.vercel.app/review?serviceId=${_id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data)

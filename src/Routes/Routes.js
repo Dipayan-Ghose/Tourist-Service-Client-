@@ -21,18 +21,18 @@ export const routes= createBrowserRouter([
 
             {
                 path: '/',
-                loader: ()=> fetch('http://localhost:5000/slider'),
+                loader: ()=> fetch('https://tourist-service-server-ecru.vercel.app/slider'),
                 element: <Home></Home>
             },
             {
                 path: '/services',
-                loader:()=> fetch('http://localhost:5000/services'),
+                loader:()=> fetch('https://tourist-service-server-ecru.vercel.app/services'),
                 element: <Services></Services>
             },
             {
                 path: '/services/:id',
                 loader:({params})=>{
-                    return fetch(`http://localhost:5000/services/${params.id}`)
+                    return fetch(`https://tourist-service-server-ecru.vercel.app/services/${params.id}`)
                 },
                 element: <ServiceDetails></ServiceDetails>
             },

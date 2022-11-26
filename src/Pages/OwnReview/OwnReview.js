@@ -13,7 +13,7 @@ const [review, setReview]= useState([]);
 const [del, setDel]=useState([]);
 
 useEffect(()=>{
-    fetch(`http://localhost:5000/revieww?email=${user?.email}`, {
+    fetch(`https://tourist-service-server-ecru.vercel.app/revieww?email=${user?.email}`, {
       headers: {
           authorization: `Bearer ${localStorage.getItem('tourist-token')}`
       }
@@ -33,7 +33,7 @@ useEffect(()=>{
 const handleDelete=(id)=>{
   const msg=window.confirm('Want to delete this review?');
   if(msg){
-    fetch(`http://localhost:5000/reviews/${id}`,{
+    fetch(`https://tourist-service-server-ecru.vercel.app/reviews/${id}`,{
       method: 'DELETE',
       headers: {
         authorization: `Bearer ${localStorage.getItem('tourist-token')}`
@@ -68,7 +68,7 @@ const handleDelete=(id)=>{
     event.preventDefault();
     console.log('Clicked');
 
-    fetch(`http://localhost:5000/reviews/${del._id}`, {
+    fetch(`https://tourist-service-server-ecru.vercel.app/reviews/${del._id}`, {
       method: 'PATCH',
       headers: {
           'content-type': 'application/json',

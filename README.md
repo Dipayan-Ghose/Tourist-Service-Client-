@@ -2,17 +2,19 @@
 Website Name: 
 ## Tourist Service
 **Here is the live site link :** 
+https://tourist-service-375c4.web.app/
 
 **Here is the github link :** Client Side: 
+https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-Dipayan-Ghose.git  
 
  Server Side: 
-
+https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-Dipayan-Ghose.git
 ## Project Description:
 
-* The project has developed by Reactjs where I use 
+* The project has developed by Reactjs, MongoDb where I use 
     * react components,
     * hooks, 
-    * mongoDb,
+    * mongoDb atlas,
     * express js,
     * some packagdes,
     * css, 

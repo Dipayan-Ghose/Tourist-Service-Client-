@@ -30,7 +30,7 @@ const AddService = () => {
               autoClose: 1200,});
         }
         else{
-            fetch('http://localhost:5000/service',{
+            fetch('https://tourist-service-server-ecru.vercel.app/service',{
                 method: 'POST',
                 headers:{
                     'content-type': 'application/json'

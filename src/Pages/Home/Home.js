@@ -19,7 +19,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/threeServices")
+    fetch("https://tourist-service-server-ecru.vercel.app/threeServices")
       .then((res) => res.json())
       .then((data) => setLimitService(data))
       .catch((error) => console.log(error));

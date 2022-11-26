@@ -33,7 +33,7 @@ const Login = () => {
         console.log(currentUser);
         //JWT
 
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://tourist-service-server-ecru.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -80,7 +80,7 @@ const Login = () => {
         console.log(currentUser);
         //JWT
 
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://tourist-service-server-ecru.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
