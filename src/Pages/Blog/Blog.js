@@ -1,133 +1,192 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Blog.css";
 import "../Home/Home.css";
+import { toast } from "react-toastify";
+import { MdLocationOn, MdEmail } from "react-icons/md";
+import { useEffect } from "react";
+import { success } from "daisyui/src/colors";
 import useHelmet from "../../Helmet/useHelmet";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+import emailjs from "@emailjs/browser";
 
-const Blog = () => {
-  useHelmet('Blog');
+export const Blog = () => {
+  useHelmet("Blog");
+  const form = useRef();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    const resetForm = e.target;
+
+    emailjs
+      .sendForm(
+        "service_ke4jf7u",
+        "template_asmbrpn",
+        form.current,
+        "4p6lZrqhQPCPeL3kG"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    resetForm.reset();
+    toast.success("Message Sent Successfully", {
+      position: "top-center",
+      autoClose: 1200,
+    });
+  };
 
   return (
     <div
-      className=" mx-auto my-10 statistics"
+      className="lg:w-[1200px] mx-auto my-10 blogResponsive"
       data-aos="zoom-in"
       data-aos-delay="80"
       data-aos-duration="1000"
     >
-      <div tabIndex={0} className="collapse collapse-arrow border rounded-box">
-        <div className="collapse-title bg-green-400 text-xl font-medium" >
-          Difference Between SQL and NoSQL
+      {/* responsiveContact sm:mt-[100px] my-[100px] mx-auto align-items-center lg:w-[850px]  */}
+
+      <div
+        className="card backgroundImg h-[400px] mx-auto lg:w-96 bg-base-100 shadow-2xl rounded-4 mb-5"
+        data-aos="zoom-in"
+        data-aos-delay="50"
+        data-aos-duration="900"
+      >
+        <div className="avatar mx-auto pt-8">
+          <div className="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <img src="https://avatars.githubusercontent.com/u/76113796?v=4" />
+          </div>
         </div>
-        <div className="collapse-content">
-          <h2 className="text-xl">What is SQL</h2>
-          <p className="text-start">
-            tabIndex={0} SQL or the Structured Query Language is the most common
-            and popular programming language for the relational database
-            management system. It is a language designed to extract, store,
-            insert, delete, update and manage data for structured data and
-            strategic analysis. SQL is widely used by top tech companies like
-            Facebook, Whatsapp, etc for data processing solutions. It is used
-            for different types of RDBMS including Oracle, MySQL, SQLServer,
-            etc.
-          </p>
-          <h1 className="text-xl mt-3 ">What is NoSQL</h1>
-          <p className="text-start">
-            NoSQL database provides a mechanism for storage and retrieval of
-            data that is modelled other than tabular form. It was introduced by
-            Carl Stroz in the year 1998 called a Non-relational database. Now,
-            it stands for Not only SQL. It is not limited to storing data in
-            tables, instead, enables the big data to be stored in the
-            structured, unstructured, semi-structured or polymorphic form.
+        <div className="card-body items-center text-center ">
+          <h2 className="text-2xl text-green-800 font-semibold ">Dipayan Ghose</h2>
+          <h3 className="card-title text-yellow-600">React Developer</h3>
+          <hr className="p-1 m-1 bg-black-800 w-[200px]"></hr>
+          <p className=" socialResponsive gap-4">
+            <a
+              href="https://github.com/Dipayan-Ghose"
+              target="_blank"
+              className="text-black text-2xl"
+            >
+              <BsGithub></BsGithub>
+            </a>{" "}
+            <a
+              href="https://linkedin.com/in/dipayan-ghose-bd"
+              target="_blank"
+              className="text-2xl"
+            >
+              <BsLinkedin className="text-blue-600"></BsLinkedin>
+            </a>{" "}
           </p>
         </div>
       </div>
 
       <div
-        tabIndex={0}
-        className="collapse collapse-arrow  border  rounded-box"
+        className="card backgroundImg mx-auto p-5 lg:w-96 h-[400px] p-6 rounded-4 shadow-2xl bg-base-100 "
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="900"
       >
-        <div className="collapse-title bg-green-400 text-xl font-medium">
-          What is JWT, and how does it work?
-        </div>
-        <div className="collapse-content">
-          <h1 className="text-xl">What is JWT</h1>
-          <p className="text-start">
-            JSON Web Token (JWT) is an open standard (RFC 7519) for securely
-            transmitting information between parties as JSON object. It is
-            compact, readable and digitally signed using a private key/ or a
-            public key pair by the Identity Provider(IdP). So the integrity and
-            authenticity of the token can be verified by other parties involved.
-            The purpose of using JWT is not to hide data but to ensure the
-            authenticity of the data. JWT is signed and encoded, not encrypted.
-            JWT is a token based stateless authentication mechanism. Since it is
-            a client-side based stateless session, server doesn't have to
-            completely rely on a datastore(database) to save session information
-          </p>
-          <h1 className="text-xl mt-3">How dose it works</h1>
-          <p className="text-start">
-            Basically the identity provider(IdP) generates a JWT certifying user
-            identity and Resource server decodes and verifies the authenticity
-            of the token using secret salt / public key. Here is the workflow,
-            <br></br>
-            -User sign-in using username and password or google/facebook.
-            <br></br>
-            -Authentication server verifies the credentials and issues a jwt
-            signed using either a secret salt or a private key.<br></br>
-            -User's Client uses the JWT to access protected resources by passing
-            the JWT in HTTP Authorization header.<br></br>
-            -Resource server then verifies the authenticity of the token using
-            the secret salt/ public key.
-          </p>
-        </div>
-      </div>
-
-      <div
-        tabIndex={0}
-        className="collapse collapse-arrow border   rounded-box"
-      >
-        <div className="collapse-title bg-green-400 text-xl font-medium">
-          What is the difference between javascript and Node JS?
-        </div>
-        <div className="collapse-content">
-          <h2 className="text-xl">What is Node JS</h2>
-          <p className="text-start">
-            tabIndex={0} NodeJS is a cross-platform and opensource Javascript
-            runtime environment that allows the javascript to be run on the
-            server-side. Nodejs allows Javascript code to run outside the
-            browser. Nodejs comes with a lot of modules and mostly used in web
-            development.
-          </p>
-          <h1 className="text-xl mt-3 ">What is JavaScript</h1>
-          <p className="text-start">
-            Javascript is a Scripting language. It is mostly abbreviated as JS.
-            It can be said that Javascript is the updated version of the ECMA
-            script. Javascript is a high-level programming language that uses
-            the concept of Oops but it is based on prototype inheritance.
-          </p>
-        </div>
-      </div>
-
-      <div tabIndex={0} className="collapse collapse-arrow border rounded-box">
-        <div className="collapse-title text-xl  bg-green-400 font-medium">
-          How does Node JS handle multiple requests at the same time?
-        </div>
-        <div className="collapse-content">
-          <p className="text-start">
-            NodeJS application is single-threaded. Say, if processing involves
-            request A that takes 10 seconds, it does not mean that a request
-            which comes after this request needs to wait 10 seconds to start
-            processing because NodeJS event loops are only single-threaded. The
-            entire NodeJS architecture is not single-threaded. <br></br>
-            NodeJS receives multiple client requests and places them into
-            EventQueue. NodeJS is built with the concept of event-driven
-            architecture. NodeJS has its own EventLoop which is an infinite loop
-            that receives requests and processes them. EventLoop is the listener
-            for the EventQueue. If NodeJS can process the request without I/O
-            blocking then the event loop would itself process the request and
-            sends the response back to the client by itself. But, it is possible
-            to process multiple requests parallelly using the NodeJS cluster
-            module or worker_threads module.
-          </p>
-        </div>
+        <h3 className="text-green-800 text-2xl mb-4 mx-auto">Contact</h3>
+        <form ref={form} onSubmit={sendEmail}>
+          <div className="form-group mb-6">
+            <input
+              type="text"
+              name="user_name"
+              className="form-control block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="exampleInput7"
+              placeholder="Name"
+            ></input>
+          </div>
+          <div className="form-group mb-6">
+            <input
+              type="email"
+              name="user_email"
+              required
+              className="form-control block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="exampleInput8"
+              placeholder="Email address"
+            ></input>
+          </div>
+          <div className="form-group mb-6">
+            <textarea
+              className="
+        form-control
+        block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+      "
+              id="exampleFormControlTextarea13"
+              rows="3"
+              placeholder="Message"
+              name="message"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className="
+      w-full
+      px-6
+      py-2.5
+      bg-blue-600
+      text-white
+      font-medium
+      text-xs
+      leading-tight
+      uppercase
+      rounded
+      shadow-md
+      hover:bg-blue-700 hover:shadow-lg
+      focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+      active:bg-blue-800 active:shadow-lg
+      transition
+      duration-150
+      ease-in-out"
+          >
+            Send
+          </button>
+        </form>
       </div>
     </div>
   );

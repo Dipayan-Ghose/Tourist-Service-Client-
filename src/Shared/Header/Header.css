@@ -1,17 +1,14 @@
 .textDesign{
     color: rgb(8, 70, 29);
     font-weight: 500;
-    font-size: 18px;
-    
-    
+    font-size: 18px; 
 }
 
-.logo{
-    width: 44px;
-    height: 48px;
-    border-radius: 10px;
-    
+.foo{
+    bottom: 0;
+    margin-top: ;
 }
+
 
 @media only screen and (max-Width: 600px) {
     .thisName{

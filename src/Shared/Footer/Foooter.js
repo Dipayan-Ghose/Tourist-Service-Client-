@@ -3,7 +3,8 @@ import '../Header/Header.css';
 
 const Foooter = () => {
   return (
-    <footer className="footer footer-center bottom-0 p-10 bg-green-400 text-base-content rounded-t-lg">
+    <div className="foo ">
+      <footer className="footer footer-center  bottom-0 p-10 bg-green-400 text-base-content rounded-t-lg">
       <div className="grid grid-flow-col gap-4">
         <a className="link link-hover textDesign ">About us</a>
         <a className="link link-hover textDesign">Contact</a>
@@ -11,7 +12,7 @@ const Foooter = () => {
         <a className="link link-hover textDesign">Collections</a>
       </div>
       <div>
-        <div className="grid grid-flow-col gap-4">
+        <div className="grid grid-flow-col gap-4 text-black" >
           <a>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -51,6 +52,7 @@ const Foooter = () => {
         <p className="textDesign">Copyright © 2022 - All right reserved by Tourist Service BD</p>
       </div>
     </footer>
+    </div>
   );
 };
 

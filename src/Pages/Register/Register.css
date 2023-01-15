@@ -1,3 +1,12 @@
-.width{
-    width: 350px;
+.regWidth{
+    width: 450px;
+    border-radius: 20px;
 }
+
+@media only screen and (max-Width: 500px) {
+    .regWidth{
+        width: 95%;
+       
+    };
+    
+};

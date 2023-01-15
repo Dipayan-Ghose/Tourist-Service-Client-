@@ -12,7 +12,7 @@ const LimitCard = ({ singleService }) => {
     <div>
       <div
         className="flex justify-center "
-        data-aos="fade-left"
+        data-aos="fade-up"
         data-aos-delay="80"
         data-aos-duration="1000"
       >
@@ -27,7 +27,7 @@ const LimitCard = ({ singleService }) => {
           <div className="card-body">
             <h2 className="text-2xl font-bold text-green-600 text-center">{name}</h2>
             {details.length > 100 ? (
-              <p>{details.slice(0, 100) + ".."} </p>
+              <p className="text-black">{details.slice(0, 100) + ".."} </p>
             ) : (
               <p>{details}</p>
             )}
@@ -35,7 +35,7 @@ const LimitCard = ({ singleService }) => {
             <div className="badge badge-primary badge-outline p-3 text-green-700 " >Place Rating: {rating.number}</div>
             <div className="badge badge-primary badge-outline p-3 text-green-700"> Cost: {cost}Tk</div>
           </div>
-          <Link to={`services/${_id}`}><button className="  w-28 rounded btnView p-1 text-center bg-lime-700 place-self-center mb-2 text-white ">View Details</button>
+          <Link to={`services/${_id}`}><button className="w-40 rounded btnView p-1 text-center bg-lime-700 place-self-center mb-2 text-white ">View Details</button>
 </Link>
           </div>
         </div>

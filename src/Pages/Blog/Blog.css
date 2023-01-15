@@ -1,4 +1,32 @@
-.statistics{
-    background-image: url(../../../public/bg.jpg);
-    width: 70%;
+.blogResponsive{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+
 }
+
+.socialResponsive{
+  display: flex;
+  flex-direction:row;
+  gap: 20px;
+}
+.backgroundImg{
+  background-image: url(../../../public/bg.jpg);
+ 
+}
+
+@media only screen and (max-Width:800px) {
+   
+    .blogResponsive{
+      display: flex;
+      flex-direction:column;
+      gap: 20px;
+    }
+    .socialResponsive{
+      display: flex;
+      flex-direction:row;
+      gap: 20px;
+    }
+
+}
+
+

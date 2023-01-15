@@ -46,7 +46,7 @@ const Login = () => {
             localStorage.setItem("tourist-token", data.token);
             navigate(from, { replace: true });
           });
-        toast("Logged In Successfully", {
+        toast.success("Logged In Successfully", {
           position: "top-center",
           autoClose: 2000,
         });
@@ -56,13 +56,13 @@ const Login = () => {
       })
       .catch((error) => {
         console.error(error);
-        setError(error.message);
+        setError(error.code);
       });
   };
 
   const toasty = () => {
     if (user.uid) {
-      toast("Logged In Successfully", {
+      toast.success("Logged In Successfully", {
         position: "top-center",
         autoClose: 2000,
       });
@@ -93,7 +93,7 @@ const Login = () => {
             localStorage.setItem("tourist-token", data.token);
             navigate(from, { replace: true });
           });
-        toast("Logged In Successfully", {
+        toast.success("Logged In Successfully", {
           position: "top-center",
           autoClose: 2000,
         });
@@ -104,7 +104,7 @@ const Login = () => {
   return (
     <div>
       <div className="hero  mx-auto  rounded my-4">
-        <div className="py-5 width flex-col lg:flex-row-reverse  bg-green-100">
+        <div className="py-5 loginWidth flex-col lg:flex-row-reverse  bg-green-100">
           <div className="card  flex-shrink-0 mx-auto  max-w-sm shadow-2xl bg-green-400">
             <h1 className="text-3xl font-bold text-white mt-2">Login Now!</h1>
             <form onSubmit={handleSubmit}>

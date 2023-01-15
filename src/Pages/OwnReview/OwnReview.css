@@ -1,9 +1,9 @@
-.width{
+.ownRevWidth{
     width: 80%;
 }
 
 .Oheight{
-    height: 300px;
+    height: 400px;
 }
 
 .trHeight{
@@ -13,5 +13,5 @@
 }
 
 .modalHeight{
-    height: 300px;
+    height: max-content;
 }

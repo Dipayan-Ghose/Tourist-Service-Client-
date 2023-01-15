@@ -90,17 +90,17 @@ const handleDelete=(id)=>{
 
   return (
     <div>
-      <div data-aos="fade-left" data-aos-delay="80" data-aos-duration="1000" className="grid md:hidden:overflow-x-scroll overflow-y-scroll Oheight flex-grow my-5 p-5 card bg-green-100 rounded-box mx-auto width">
+      <div data-aos="fade-left" data-aos-delay="80" data-aos-duration="1000" className="grid md:hidden:overflow-x-scroll overflow-y-scroll lg:h-[500px] Oheight flex-grow mt-8 lg:mb-48 p-5 card bg-green-100 rounded-box mx-auto ownRevWidth">
         <table className="table-normal ">
           <thead>
-            <tr className="">
+            <tr className="text-black">
               <th>User Name</th>
               <th>Service Name</th>
               <th>Comments</th>
               <th>Options</th>
             </tr>
           </thead>
-          <tbody className="">
+          <tbody className="text-black">
        
 
             {
@@ -111,6 +111,7 @@ const handleDelete=(id)=>{
                     handleUpdate={handleUpdate}
                     handleChange={handleChange}
                 ></ReviewRows>) 
+                
             }   
             
             
@@ -119,9 +120,67 @@ const handleDelete=(id)=>{
         </table>
         <h1 className="text-center ">{review.length===0 && 'No Reviews Were Added'} </h1>
 
-       
+        
         
       </div>
+      <input type="checkbox" id="updateModal" className="modal-toggle" />
+        <div className="modal modal-middle ">
+          <div className="modal-box modalHeight" >
+            <label
+              htmlFor="updateModal"
+              className="btn btn-primary btn-sm btn-circle absolute right-2 top-2"
+            >
+              ✕
+            </label>
+            <h3 className="font-bold text-lg">
+              {/* Want to edit {service}'s review? */}
+            </h3>
+            <p className="py-4">
+              <div className="">
+              <form onSubmit={handleUpdate}>
+                  <div className="card mx-auto bg-green-100 rounded-box my-5 p-5">
+                    <h1 className="text-2xl mb-5 text-green-700 font-bold text-center ">
+                      Edit Review
+                    </h1>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center">
+                      <input
+                        type="text"
+                        
+                        placeholder=""
+                        className="input input-bordered input-primary w-48 max-w-xs input-sm"
+                        readOnly
+                        defaultValue={user?.email}
+                      />
+                      <input
+                        type="text"
+                        placeholder=""
+                        className="input input-bordered input-primary w-48 max-w-xs input-sm"
+                        readOnly
+                        // defaultValue={`Service: ${service}`}
+                      />
+                    </div>
+                    <textarea
+                    onChange={handleChange}
+                      name="comment"
+                      className="textarea textarea-primary w-full mt-5"
+                      placeholder="Comment"
+                    ></textarea>
+                  </div>
+                  <div className="modal-action">
+                    <label
+                      type="submit"
+                      htmlFor="updateModal"
+                      className="btn btn-primary"
+                    >
+                      Update
+                    </label>
+                  </div>
+               </form>
+              </div>
+            </p>
+          </div>
+        </div>
+      
     </div>
   );
 };

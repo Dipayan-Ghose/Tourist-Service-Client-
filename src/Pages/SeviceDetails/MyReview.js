@@ -60,15 +60,15 @@ const MyReview = ({getDetails}) => {
     <div className="">
       <form onSubmit={handleOrder}>
       <div className="card mx-auto bg-green-100 rounded-box my-5 p-5">
-        <h1 className="text-2xl mb-5 text-green-700 font-bold text-center ">
+        <h1 className="text-2xl my-5 text-green-700 font-bold text-center ">
           Add Your Review
         </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-3 justify-items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 justify-items-center gap-2">
           <input
             type="text"
             name="name"
             placeholder=""
-            className="input input-bordered input-primary  w-48 max-w-xs input-sm"
+            className="input input-bordered input-primary w-48 max-w-xs input-sm text-black"
             readOnly
             defaultValue={user?.displayName}
           />
@@ -76,7 +76,7 @@ const MyReview = ({getDetails}) => {
             type="text"
             name="email"
             placeholder=""
-            className="input input-bordered input-primary w-48 max-w-xs input-sm"
+            className="input input-bordered input-primary w-48 max-w-xs input-sm text-black"
             readOnly
             defaultValue={user?.email}
           />
@@ -84,14 +84,14 @@ const MyReview = ({getDetails}) => {
             type="text"
             name="serviceName"
             placeholder=""
-            className="input input-bordered input-primary w-48 max-w-xs input-sm"
+            className="input input-bordered input-primary w-48 max-w-xs input-sm text-black"
             readOnly
             defaultValue={`Service: ${name}`}
           />
         </div>
         <textarea
           name="comment"
-          className="textarea textarea-primary w-full mt-5"
+          className="textarea textarea-primary w-full mt-5 text-black"
           placeholder="Comment"
         >
           

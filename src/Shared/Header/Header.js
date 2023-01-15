@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import logo from "./logo.png";
 import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../../Authentication/Auth/Auth";
@@ -13,7 +12,7 @@ const Header = () => {
   const handleLogout = () => {
     providerLogout()
       .then(() => {
-        toast('Logging Out', {position: "top-center",
+        toast.success('Logging Out', {position: "top-center",
         autoClose: 1500});
         navigate('/');
       })
@@ -25,7 +24,7 @@ const Header = () => {
       <div className="navbar rounded-b-lg bg-green-400 ">
         <div className="navbar-center ">
           <div className="dropdown">
-            <label tabIndex={0} className="btn lg:hidden mx-3">
+            <label tabIndex={0} className="btn btn-primary lg:hidden mx-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 "
@@ -43,24 +42,24 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-40"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-60 text-center"
             >
-              <li className="textDesign ">
+              <li className="textDesign hover-bordered">
                 <Link to="/">
                   <a>Home</a>
                 </Link>
               </li>
-              <li className="textDesign">
+              <li className="textDesign hover-bordered">
                 <Link to="/services">
                   <a>Services</a>
                 </Link>
               </li>
-              <li className="textDesign">
+              <li className="textDesign hover-bordered">
                 <Link to="/vision">
                   <a>Our Achievments</a>
                 </Link>
               </li>
-              <li className="textDesign">
+              <li className="textDesign hover-bordered">
                 <Link to="/blogs">
                   <a> Blog</a>
                 </Link>
@@ -69,12 +68,12 @@ const Header = () => {
 
               {user ? (
                 <div>
-                  <li className="textDesign">
+                  <li className="textDesign hover-bordered">
                   <Link to="/myReview">
                 <a className="">My Reviews</a>
               </Link>
                   </li>
-                  <li className="textDesign ">
+                  <li className="textDesign hover-bordered">
                     <Link to="/addService">
                       <a>Add Service</a>
                     </Link>
@@ -82,21 +81,18 @@ const Header = () => {
                   <li className="textDesign">
                     <a onClick={handleLogout}>Logout</a>
                   </li>
-                  <p className="text-center text-green-600">{user.displayName}</p>
+                  <p className="text-center text-green-600">Hello, {user.displayName}</p>
                 </div>
               ) : (
                 <li >
                   <Link to="/login">
-                    <button className=" textDesign">Login</button>
+                    <button className=" textDesign hover-bordered">Login</button>
                   </Link>
                 </li>
               )}
             </ul>
           </div>
           <div className="flex align-items-center">
-            <div>
-              <img className="logo lg:ml-3" src={logo} alt=""></img>
-            </div>
             <div>
               <Link to="/">
                 <a className="btn glass normal-case text-xl text-green-900 mx-5">
@@ -106,8 +102,8 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="navbar navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal bg-green-400 rounded-box p-1 gap-1">
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal bg-green-400 rounded-box  gap-1">
             <li className="textDesign ">
               <Link to="/">
                 <a>Home</a>
@@ -132,7 +128,7 @@ const Header = () => {
           </ul>
 
           {user? (
-            <div className=" flex">
+            <div className=" flex ">
              <ul className="menu menu-horizontal bg-green-400 rounded-box p-1 gap-1">
                 <li className="textDesign">
                 <Link to="/myReview">
@@ -151,13 +147,13 @@ const Header = () => {
              </ul>
               <div className=" ml-5 ">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar ">
-                <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <div className="w-24 lg:mt-1 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                   <img alt={user.displayName} src={user.photoURL} />
                 </div>
               </label>
-              
               </div>
-              <h1 className="ml-5 textDesign thisName">WELCOME, {user?.displayName}</h1>
+              <h1 className="ml-5 lg:mt-3 textDesign thisName">WELCOME, {user?.displayName}</h1>
+
             </div>
           ) : (
             <li>

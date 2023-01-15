@@ -1,6 +1,6 @@
 .widht{
-    width: 70%;
-    height: 380px;
+    width: 80%;
+    height: 460px;
     margin-top: 20px;
     border-radius: 20px;
 }
@@ -44,6 +44,9 @@
     background-image: url(../../../public/bg.jpg);
     width: 70%;
 }
+.imgBlog{
+    width: 400px;
+}
 
 
 @media only screen and (max-Width: 500px) {
@@ -72,5 +75,8 @@
     }
     .statistics{
         width: 80%;
+    }
+    .imgBlog{
+        width: 300px;
     }
 }

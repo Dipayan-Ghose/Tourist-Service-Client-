@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { authContext } from '../../Authentication/Auth/Auth';
 import useHelmet from '../../Helmet/useHelmet';
 import './Register.css';
@@ -27,6 +28,7 @@ registerUser(email, password)
         console.log(user);
         form.reset();
         handleUpdate(name,photo);
+        toast.success('Registered Successfully');
         navigate('/');
       })
       .catch((error) => {
@@ -49,7 +51,7 @@ updateUserProfile(profile)
 
     return (
         <div >
-              <div className="hero width mx-auto bg-green-100 rounded my-4">
+              <div className="hero regWidth mx-auto bg-green-100 rounded my-4">
             <div className="card flex-shrink-0 width max-w-sm shadow-2xl bg-green-400 mx-auto my-4">
             <h1 className="text-3xl text-white mt-2">Register Here</h1>
             <form onSubmit={handleRegistration}>

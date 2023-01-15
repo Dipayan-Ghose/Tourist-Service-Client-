@@ -1,4 +1,4 @@
-.width{
+.loginWidth{
     width: 480px;
     border-radius: 20px;
 }
@@ -7,7 +7,7 @@
 }
 
 @media only screen and (max-Width: 500px) {
-    .width{
+    .loginWidth{
         width: 380px;
        
     };

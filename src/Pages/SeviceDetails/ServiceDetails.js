@@ -17,25 +17,11 @@ const ServiceDetails = () => {
   const [rev, setRev] = useState([]);
 const [service, setService]= useState([]);
   
-//   useEffect(() => {
-//     (async () => {
-//         const review = await axios.get('http://localhost:5000/reviews')
-//         const service = await axios.get('http://localhost:5000/services')
-//     })()
-// }, [])
-
-
-
   useEffect(() => {
     fetch(`https://tourist-service-server-ecru.vercel.app/review?serviceId=${_id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        // if(data){
-        //   const remaining= rev.filter(re=>re.serviceId === service._id);
-        //   console.log(remaining)
-        //   setRev(remaining)
-        // }
         setRev(data)
         
         })
@@ -47,14 +33,14 @@ const [service, setService]= useState([]);
       <div className="width mx-auto " data-aos="fade-up" data-aos-delay="80" data-aos-duration="1000">
         <div className="flex flex-col w-full flex-row ">
           <div className="my-5 p-5 grid flex-grow card bg-green-100 rounded-box ">
-            <h1 className="text-2xl text-green-700 font-bold text-start ">
+            <h1 className="text-2xl text-green-700 font-bold text-center lg:text-start ">
               Service Details
             </h1>
             <div>
               <h1 className="text-2xl text-green-700 text-center mt-4">
                 All You Need To Know About <br></br>'{name}'
               </h1>
-              <p className="text-start my-5">{details}</p>
+              <p className="text-start text-black my-5">{details}</p>
               <h1 className="text-xl font-semibold text-green-600">
                 Estimated Cost: {cost}Tk (It may changeable)
               </h1>
@@ -68,14 +54,15 @@ const [service, setService]= useState([]);
               </h1>
 
               <div className="grid md:hidden:overflow-x-scroll  overflow-y-scroll Sheight">
-                <table className="table-normal ">
-                  <thead className="">
+                <table className="table-auto">
+                  <thead className="bg-primary border-b">
                     <tr>
-                      <th>Name</th>
-                      <th>Comments</th>
+                      <th className="text-gray-800">Name</th>
+
+                      <th className="text-gray-800">Comments</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className=" border">
                     {rev.map((eachReview) => (
                       <AllReview
                         key={eachReview._id}
@@ -95,7 +82,7 @@ const [service, setService]= useState([]);
         <MyReview getDetails={getDetails}></MyReview>
         :
         <div className="mb-8">
-                  <h1 className="text-green-600 font-semibold text-center text-2xl mb-4">Please login to add a review</h1>
+                  <h1 className="text-green-800 font-semibold text-center text-2xl my-5">Please login to add a review</h1>
           <Link to='/login'> <button  className="btn btn-primary">Login</button></Link>
           </div>
       }

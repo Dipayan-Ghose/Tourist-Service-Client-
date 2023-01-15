@@ -1,10 +1,6 @@
-.width{
-    width: 350px;
-    
-}
 
 .imgWidth{
-    width: 340px;
+    width: 350px;
     height: 200px;
     border-radius: 20px;
 
@@ -14,3 +10,4 @@
     background-image: url(../../../public/bg.jpg);
    
 }
+
