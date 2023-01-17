@@ -3,6 +3,9 @@ import useHelmet from "../../Helmet/useHelmet";
 
 const OurVision = () => {
   useHelmet("Our Achievments");
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const [like, setLike] = useState([4250]);
 
   const rate = () => {

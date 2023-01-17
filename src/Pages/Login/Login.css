@@ -2,14 +2,19 @@
     width: 480px;
     border-radius: 20px;
 }
+.loginBgwidth{
+    border-radius: 20px;
+}
+
 .buttonlink{
     text-decoration: none;
 }
 
 @media only screen and (max-Width: 500px) {
     .loginWidth{
-        width: 380px;
+        width: 90%
        
     };
+   
     
 };

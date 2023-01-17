@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider } from "firebase/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -10,6 +10,9 @@ import useHelmet from "../../Helmet/useHelmet";
 
 const Login = () => {
   useHelmet("Login");
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -104,8 +107,8 @@ const Login = () => {
   return (
     <div>
       <div className="hero  mx-auto  rounded my-4">
-        <div className="py-5 loginWidth flex-col lg:flex-row-reverse  bg-green-100">
-          <div className="card  flex-shrink-0 mx-auto  max-w-sm shadow-2xl bg-green-400">
+        <div className="py-5 lg:loginBgwidth w-full lg:w-[430px] flex-col lg:flex-row-reverse  bg-green-100">
+          <div className="card loginWidth flex-shrink-0 mx-auto  max-w-sm shadow-2xl bg-green-400">
             <h1 className="text-3xl font-bold text-white mt-2">Login Now!</h1>
             <form onSubmit={handleSubmit}>
               <div className="card-body p-4">

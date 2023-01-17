@@ -6,9 +6,11 @@
 
 .foo{
     bottom: 0;
-    margin-top: ;
 }
 
+.menuWidth{
+    width: 300px;
+}
 
 @media only screen and (max-Width: 600px) {
     .thisName{

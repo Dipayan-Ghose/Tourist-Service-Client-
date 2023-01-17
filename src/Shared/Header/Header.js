@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <div className="">
+    <div className="sticky top-0 z-50 ">
       <div className="navbar rounded-b-lg bg-green-400 ">
         <div className="navbar-center ">
           <div className="dropdown">
@@ -42,24 +42,24 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-60 text-center"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box menuWidth "
             >
-              <li className="textDesign hover-bordered">
+              <li className="textDesign fs-xl">
                 <Link to="/">
                   <a>Home</a>
                 </Link>
               </li>
-              <li className="textDesign hover-bordered">
+              <li className="textDesign ">
                 <Link to="/services">
-                  <a>Services</a>
+                  <a>Places</a>
                 </Link>
               </li>
-              <li className="textDesign hover-bordered">
+              <li className="textDesign">
                 <Link to="/vision">
-                  <a>Our Achievments</a>
+                  <a>Achievments</a>
                 </Link>
               </li>
-              <li className="textDesign hover-bordered">
+              <li className="textDesign ">
                 <Link to="/blogs">
                   <a> Blog</a>
                 </Link>
@@ -68,14 +68,14 @@ const Header = () => {
 
               {user ? (
                 <div>
-                  <li className="textDesign hover-bordered">
+                  <li className="textDesign ">
                   <Link to="/myReview">
                 <a className="">My Reviews</a>
               </Link>
                   </li>
-                  <li className="textDesign hover-bordered">
+                  <li className="textDesign ">
                     <Link to="/addService">
-                      <a>Add Service</a>
+                      <a>Add Places</a>
                     </Link>
                   </li>
                   <li className="textDesign">
@@ -111,12 +111,12 @@ const Header = () => {
             </li>
             <li className="textDesign">
               <Link to="/services">
-                <a>Services</a>
+                <a>Places</a>
               </Link>
             </li>
             <li className="textDesign">
               <Link to="/vision">
-                <a>Our Achievments</a>
+                <a>Achievments</a>
               </Link>
             </li>
             <li className="textDesign">
@@ -138,7 +138,7 @@ const Header = () => {
                 </li>
                 <li className="textDesign ">
                   <Link to="/addService">
-                    <a>Add Service</a>
+                    <a>Add Places</a>
                   </Link>
                 </li>
                 <li className="textDesign">

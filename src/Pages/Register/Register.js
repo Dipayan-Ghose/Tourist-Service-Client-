@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { useEffect } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { authContext } from '../../Authentication/Auth/Auth';
@@ -7,7 +8,9 @@ import './Register.css';
 
 const Register = () => {
   useHelmet('Register');
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
 const {registerUser, updateUserProfile}= useContext(authContext);
 const [error, setError]= useState('');
@@ -51,8 +54,8 @@ updateUserProfile(profile)
 
     return (
         <div >
-              <div className="hero regWidth mx-auto bg-green-100 rounded my-4">
-            <div className="card flex-shrink-0 width max-w-sm shadow-2xl bg-green-400 mx-auto my-4">
+              <div className="hero lg:w-[490px] mx-auto bg-green-100 rounded my-4">
+            <div className="card regWidth flex-shrink-0  shadow-2xl bg-green-400 mx-auto my-4">
             <h1 className="text-3xl text-white mt-2">Register Here</h1>
             <form onSubmit={handleRegistration}>
             <div className="card-body p-4">

@@ -7,6 +7,9 @@ import useHelmet from "../../Helmet/useHelmet";
 
 const MyReview = () => {
   useHelmet('My Review');
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
 const {user, providerLogout}= useContext(authContext);
 const [review, setReview]= useState([]);
@@ -90,7 +93,7 @@ const handleDelete=(id)=>{
 
   return (
     <div>
-      <div data-aos="fade-left" data-aos-delay="80" data-aos-duration="1000" className="grid md:hidden:overflow-x-scroll overflow-y-scroll lg:h-[500px] Oheight flex-grow mt-8 lg:mb-48 p-5 card bg-green-100 rounded-box mx-auto ownRevWidth">
+      <div data-aos="fade-left" data-aos-delay="80" data-aos-duration="1000" className="grid md:hidden:overflow-x-scroll overflow-y-scroll lg:h-[500px] Oheight flex-grow my-8 lg:mb-48 p-5 card bg-green-100 rounded-box mx-auto ownRevWidth">
         <table className="table-normal ">
           <thead>
             <tr className="text-black">

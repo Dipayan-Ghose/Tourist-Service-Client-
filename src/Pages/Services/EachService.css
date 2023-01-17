@@ -1,7 +1,7 @@
 
 .imgWidth{
-    width: 350px;
-    height: 200px;
+    width: 400px;
+    height: 220px;
     border-radius: 20px;
 
 }
@@ -11,3 +11,12 @@
    
 }
 
+@media only screen and (max-Width:600px) {
+
+    .imgWidth{
+    width: 350px;
+    height: 220px;
+    border-radius: 20px;
+
+}
+}

@@ -17,13 +17,13 @@ const EachService = ({service}) => {
       <PhotoProvider  maskOpacity={0.5} >
      <PhotoView src={image_url}>
      <figure>
-          <img className="imgWidth p-2 mt-2" src={image_url} alt="" />
+          <img className="imgWidth p-2" src={image_url} alt="" />
         </figure>
      </PhotoView>
      </PhotoProvider>
         
         <div className="card-body">
-          <h2 className="text-2xl font-bold text-green-600 text-center">
+          <h2 className="text-3xl font-bold text-green-600 text-center">
            {name}
             
           </h2>

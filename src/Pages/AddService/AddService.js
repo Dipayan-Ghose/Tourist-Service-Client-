@@ -5,6 +5,9 @@ import useHelmet from "../../Helmet/useHelmet";
 
 const AddService = () => {
  useHelmet('Add Service');
+ useEffect(() => {
+  window.scrollTo(0, 0)
+}, [])
 
     const handleService=(event)=>{
         event.preventDefault();

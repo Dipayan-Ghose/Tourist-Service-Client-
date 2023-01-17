@@ -10,6 +10,9 @@ import useHelmet from "../../Helmet/useHelmet";
 
 const ServiceDetails = () => {
   useHelmet('Service Details');
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const getDetails = useLoaderData();
   const{user}= useContext(authContext);

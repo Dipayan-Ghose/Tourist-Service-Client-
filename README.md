@@ -5,10 +5,10 @@ Website Name:
 https://tourist-service-375c4.web.app/
 
 **Here is the github link :** Client Side: 
-https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-Dipayan-Ghose.git  
+https://github.com/Dipayan-Ghose/Tourist-Service-Client-
 
  Server Side: 
-https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-Dipayan-Ghose.git
+https://github.com/Dipayan-Ghose/Tourist-Service-Server-
 ## Project Description:
 
 * The project has developed by Reactjs, MongoDb where I use 

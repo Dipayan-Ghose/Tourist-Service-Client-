@@ -6,6 +6,9 @@ import LimitCard from "./LimitCard";
 
 const Home = () => {
   useHelmet("Home");
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const getServices = useLoaderData();
   const [slider, nextSlider] = useState(getServices[0]);

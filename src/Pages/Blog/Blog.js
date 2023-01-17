@@ -45,14 +45,13 @@ export const Blog = () => {
   return (
     <div
       className="lg:w-[1200px] mx-auto my-10 blogResponsive"
-      data-aos="zoom-in"
-      data-aos-delay="80"
-      data-aos-duration="1000"
+      // data-aos="zoom-in"
+      // data-aos-delay="80"
+      // data-aos-duration="1000"
     >
-      {/* responsiveContact sm:mt-[100px] my-[100px] mx-auto align-items-center lg:w-[850px]  */}
 
       <div
-        className="card backgroundImg h-[400px] mx-auto lg:w-96 bg-base-100 shadow-2xl rounded-4 mb-5"
+        className="card backgroundImg h-[400px] mx-auto lg:w-96  shadow-2xl rounded-4 mb-5"
         data-aos="zoom-in"
         data-aos-delay="50"
         data-aos-duration="900"
@@ -86,8 +85,8 @@ export const Blog = () => {
       </div>
 
       <div
-        className="card backgroundImg mx-auto p-5 lg:w-96 h-[400px] p-6 rounded-4 shadow-2xl bg-base-100 "
-        data-aos="fade-up"
+        className="card backgroundImg mx-auto lg:p-5 px-7 lg:w-96 h-[400px] rounded-4 shadow-2xl  "
+        data-aos="zoom-in"
         data-aos-delay="50"
         data-aos-duration="900"
       >
