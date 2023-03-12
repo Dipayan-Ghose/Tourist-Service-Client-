@@ -33,7 +33,7 @@ const [service, setService]= useState([]);
 
   return (
     <div>
-      <div className="width mx-auto " data-aos="fade-up" data-aos-delay="80" data-aos-duration="1000">
+      <div className="detailswidth mx-auto " data-aos="fade-up" data-aos-delay="80" data-aos-duration="1000">
         <div className="flex flex-col w-full flex-row ">
           <div className="my-5 p-5 grid flex-grow card bg-green-100 rounded-box ">
             <h1 className="text-2xl text-green-700 font-bold text-center lg:text-start ">

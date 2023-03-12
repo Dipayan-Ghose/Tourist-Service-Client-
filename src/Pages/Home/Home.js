@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import useHelmet from "../../Helmet/useHelmet";
 import "./Home.css";
 import LimitCard from "./LimitCard";
+import { toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
+
 
 const Home = () => {
   useHelmet("Home");
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   const getServices = useLoaderData();
   const [slider, nextSlider] = useState(getServices[0]);
   const [limitService, setLimitService] = useState([]);
   const [like, setLike] = useState([4250]);
+  const form = useRef();
 
   const sliderClick = (index) => {
     console.log("click");
@@ -40,6 +44,32 @@ const Home = () => {
       setLike(items);
     }
   }, []);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    const resetForm = e.target;
+
+    emailjs
+      .sendForm(
+        "service_ke4jf7u",
+        "template_asmbrpn",
+        form.current,
+        "4p6lZrqhQPCPeL3kG"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    resetForm.reset();
+    toast.success("Message Sent Successfully", {
+      position: "top-center",
+      autoClose: 1200,
+    });
+  };
 
   return (
     <div className="">
@@ -86,7 +116,7 @@ const Home = () => {
         data-aos-delay="60"
         data-aos-duration="600"
       >
-        <button className="btn btn-primary w-48 mt-5">
+        <button className="btn btn-primary text-white text-bold text-[20px] w-64 p-3 mt-8 mb-5">
           <Link to="/services">See All</Link>
         </button>
       </div>
@@ -152,7 +182,151 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div
+     
+      <div class="px-4 py-24 mx-auto max-w-7xl">
+  <div class="grid items-center grid-cols-1 mb-24 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
+    <div>
+      <h2 class="mb-4 text-2xl font-bold tracking-tight text-center text-green-700 md:leading-tight sm:text-left md:text-4xl">Clear overview for efficient tracking</h2>
+      <p class="mb-5 text-base text-center text-gray-600 sm:text-left md:text-lg">
+      An area of 4479 square kilometers surrounded by four lush green hilly ranges called Politai, Meranja, Tambang and Wailatong. It is at the same time home of different indigenous tribes who resides here since the medieval period. 
+      </p>
+      <a href="#" class="w-full btn btn-primary btn-lg sm:w-auto text-white">Learn More</a>
+    </div>
+    <div class="w-full h-full bg-green-200">
+      <img className="feature" src="https://i.ibb.co/fpj8rKJ/bandarban.jpg"></img>
+    </div>
+  </div>
+  <div class="grid flex-col-reverse items-center grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
+    <div class="order-none md:order-2">
+      <h2 class="mb-4 text-2xl font-bold tracking-tight text-center text-green-700 md:leading-tight sm:text-left md:text-4xl">Travel with us and enjoy your vacation</h2>
+      <p class="mb-5 text-base text-center text-gray-600 sm:text-left md:text-lg">
+      The coastal area of Bangladesh. It stands in the belly of Bay of Bengal. This Island is the off coast near Chakaria and Cox’s Bazar of Bangladesh. Total island is covered by 215.8 square kilometers of lands.
+      </p>
+      <a href="#" class="w-full btn btn-primary text-white btn-lg sm:w-auto">Learn More</a>
+    </div>
+    <div class="w-full h-full bg-green-200">
+     <img className="feature" src="https://i.ibb.co/gtDFjt5/kutubdia.jpg"></img>
+    </div>
+  </div>
+</div>
+<div className="px-4 py-24 mx-auto max-w-7xl">
+  <div className="grid items-center w-full grid-cols-1 gap-0 mx-auto lg:grid-cols-11 lg:gap-24 xl:w-11/12">
+    <div className="col-auto text-center md:col-span-7 lg:text-left">
+      <h1 className="mb-4 text-3xl font-bold leading-tight text-green-700 md:text-4xl md:leading-none tracking-none md:tracking-tight">Ready to start your journey?</h1>
+      <p className="mb-10 text-xl font-[15px] text-orange-700 md:text-xl md:tracking-relaxed md:mb-4">
+      One of the most promising and well-known travel agencies in Bangladesh. The main office of this agency is in Dhaka, the capital of Bangladesh. Feel free to connect with us and explore the world.
+      </p>
+    </div>
+    <div className="col-auto md:col-span-4">
+    <div
+        className="card backgroundImg mx-auto lg:p-5 px-7 lg:w-96 h-[400px] rounded-4 shadow-2xl  "
+        data-aos="zoom-in"
+        data-aos-delay="50"
+        data-aos-duration="900"
+      >
+        <h3 className="text-green-800 text-2xl mb-4 mx-auto">Contact</h3>
+        <form ref={form} onSubmit={sendEmail}>
+          <div className="form-group mb-6">
+            <input
+              type="text"
+              name="user_name"
+              className="form-control block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="exampleInput7"
+              placeholder="Name"
+            ></input>
+          </div>
+          <div className="form-group mb-6">
+            <input
+              type="email"
+              name="user_email"
+              required
+              className="form-control block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="exampleInput8"
+              placeholder="Email address"
+            ></input>
+          </div>
+          <div className="form-group mb-6">
+            <textarea
+              className="
+        form-control
+        block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+      "
+              id="exampleFormControlTextarea13"
+              rows="3"
+              placeholder="Message"
+              name="message"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className="
+      w-full
+      px-6
+      py-2.5
+      bg-blue-600
+      text-white
+      font-medium
+      text-xs
+      leading-tight
+      uppercase
+      rounded
+      shadow-md
+      hover:bg-blue-700 hover:shadow-lg
+      focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+      active:bg-blue-800 active:shadow-lg
+      transition
+      duration-150
+      ease-in-out"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      {/* <div
         className="card imgBlog mb-8 bg-green-100 shadow-lg mx-auto image-full"
         data-aos="flip-up"
         data-aos-delay="80"
@@ -174,7 +348,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

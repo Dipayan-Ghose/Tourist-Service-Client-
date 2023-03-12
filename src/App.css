@@ -1,7 +1,7 @@
 .App {
   text-align: center;
-    background-image: url(../public/bgColor.jpg);
-    
+  background-color: rgba(92, 247, 164, 0.588);
+    /* background-image: url(../public/bgcolor.png); */
   }
 
 .App-logo {

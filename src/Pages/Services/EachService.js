@@ -41,7 +41,7 @@ const EachService = ({service}) => {
             <div className="badge badge-outline p-3 text-green-800 " >Rating: {rating.number}</div>
             <div className="badge badge-outline p-3 text-green-800  lg:ml-5"> Cost: {cost}Tk</div>
           </div>
-            <Link to={`/services/${_id}`}><button className="w-40 rounded p-2 text-center bg-lime-700 place-self-center mt-2 text-white ">View Details</button>
+            <Link to={`/services/${_id}`}><button className="w-40 rounded p-2 text-center bg-green-500 place-self-center mt-2 text-white ">View Details</button>
 </Link>
         </div>
       </div>

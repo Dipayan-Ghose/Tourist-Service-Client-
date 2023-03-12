@@ -35,7 +35,7 @@ const LimitCard = ({ singleService }) => {
             <div className="badge badge-primary badge-outline p-3 text-green-700 " >Place Rating: {rating.number}</div>
             <div className="badge badge-primary badge-outline p-3 text-green-700"> Cost: {cost}Tk</div>
           </div>
-          <Link to={`services/${_id}`}><button className="w-40 rounded btnView p-1 text-center bg-lime-700 place-self-center mb-2 text-white ">View Details</button>
+          <Link to={`services/${_id}`}><button className="w-40  btnView p-2 text-center bg-green-500 place-self-center mb-2 text-white ">View Details</button>
 </Link>
           </div>
         </div>

@@ -33,19 +33,27 @@
 
 }
 .limitCardWidth{
-    width: 60%;
-    height: 210px;
-    padding: 5px;    
+    width: 75%;
+    height: 240px;
+    padding: 10px;    
     background-image: url(../../../public/bg.jpg);
 
+}
+
+.btnView{
+   border-radius: 8px;
 }
 
 .statistics{
     background-image: url(../../../public/bg.jpg);
     width: 70%;
+    height: 220px;
 }
 .imgBlog{
     width: 400px;
+}
+.feature{
+    border-radius: 15px;
 }
 
 
@@ -72,11 +80,12 @@
     }
     .btnView{
         margin-top: 10px;
+        border-radius: 8px;
     }
     .statistics{
         width: 80%;
     }
     .imgBlog{
-        width: 300px;
+        width: 330px;
     }
 }
