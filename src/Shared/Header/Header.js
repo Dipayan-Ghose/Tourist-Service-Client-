@@ -46,7 +46,7 @@ const Header = () => {
             >
               <li className="textDesign fs-xl">
                 <Link to="/">
-                  <a>Home</a>
+                  <a className="color">Home</a>
                 </Link>
               </li>
               <li className="textDesign ">
@@ -106,22 +106,22 @@ const Header = () => {
           <ul className="menu menu-horizontal bg-green-400 rounded-box  gap-1">
             <li className="textDesign ">
               <Link to="/">
-                <a>Home</a>
+                <a className="color">Home</a>
               </Link>
             </li>
             <li className="textDesign">
               <Link to="/services">
-                <a>Places</a>
+                <a className="color">Places</a>
               </Link>
             </li>
             <li className="textDesign">
               <Link to="/vision">
-                <a>Achievments</a>
+                <a className="color">Achievments</a>
               </Link>
             </li>
             <li className="textDesign">
               <Link to="/blogs">
-                <a> Blog</a>
+                <a className="color"> Blog</a>
               </Link>
             </li>
            
@@ -132,17 +132,17 @@ const Header = () => {
              <ul className="menu menu-horizontal bg-green-400 rounded-box p-1 gap-1">
                 <li className="textDesign">
                 <Link to="/myReview">
-                <a className="">My Reviews</a>
+                <a className="color">My Reviews</a>
               </Link>
                  
                 </li>
                 <li className="textDesign ">
                   <Link to="/addService">
-                    <a>Add Places</a>
+                    <a className="color">Add Places</a>
                   </Link>
                 </li>
                 <li className="textDesign">
-                  <a onClick={handleLogout}>Logout</a>
+                  <a onClick={handleLogout} className="color">Logout</a>
                 </li>
              </ul>
               <div className=" ml-5 ">

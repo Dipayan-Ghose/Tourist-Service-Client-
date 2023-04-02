@@ -5,6 +5,8 @@ import "./Home.css";
 import LimitCard from "./LimitCard";
 import { toast } from "react-toastify";
 import emailjs from "@emailjs/browser";
+import MotionSection from "./MotionSection";
+import Gallery from "./Gallery";
 
 
 const Home = () => {
@@ -121,6 +123,10 @@ const Home = () => {
         </button>
       </div>
 
+          <div>
+            <Gallery></Gallery>
+          </div>
+
       <div data-aos="zoom-in" data-aos-delay="80" data-aos-duration="1000">
         <div className="stats stats-vertical lg:stats-horizontal shadow-2xl statistics p-5 mt-5 mb-12">
           <div className="stat">
@@ -185,7 +191,9 @@ const Home = () => {
      
       <div class="px-4 py-24 mx-auto max-w-7xl">
   <div class="grid items-center grid-cols-1 mb-24 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
-    <div>
+    <div data-aos="fade-right"
+        data-aos-delay="80"
+        data-aos-duration="800">
       <h2 class="mb-4 text-2xl font-bold tracking-tight text-center text-green-700 md:leading-tight sm:text-left md:text-4xl">Clear overview for efficient tracking</h2>
       <p class="mb-5 text-base text-center text-gray-600 sm:text-left md:text-lg">
       An area of 4479 square kilometers surrounded by four lush green hilly ranges called Politai, Meranja, Tambang and Wailatong. It is at the same time home of different indigenous tribes who resides here since the medieval period. 
@@ -197,7 +205,9 @@ const Home = () => {
     </div>
   </div>
   <div class="grid flex-col-reverse items-center grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
-    <div class="order-none md:order-2">
+    <div class="order-none md:order-2" data-aos="fade-left"
+        data-aos-delay="80"
+        data-aos-duration="800">
       <h2 class="mb-4 text-2xl font-bold tracking-tight text-center text-green-700 md:leading-tight sm:text-left md:text-4xl">Travel with us and enjoy your vacation</h2>
       <p class="mb-5 text-base text-center text-gray-600 sm:text-left md:text-lg">
       The coastal area of Bangladesh. It stands in the belly of Bay of Bengal. This Island is the off coast near Chakaria and Cox’s Bazar of Bangladesh. Total island is covered by 215.8 square kilometers of lands.
@@ -209,9 +219,11 @@ const Home = () => {
     </div>
   </div>
 </div>
-<div className="px-4 py-24 mx-auto max-w-7xl">
+<div className="px-4 py-2 lg:py-24 mx-auto max-w-7xl">
   <div className="grid items-center w-full grid-cols-1 gap-0 mx-auto lg:grid-cols-11 lg:gap-24 xl:w-11/12">
-    <div className="col-auto text-center md:col-span-7 lg:text-left">
+    <div className="col-auto text-center md:col-span-7 lg:text-left" data-aos="zoom-in"
+        data-aos-delay="80"
+        data-aos-duration="800">
       <h1 className="mb-4 text-3xl font-bold leading-tight text-green-700 md:text-4xl md:leading-none tracking-none md:tracking-tight">Ready to start your journey?</h1>
       <p className="mb-10 text-xl font-[15px] text-orange-700 md:text-xl md:tracking-relaxed md:mb-4">
       One of the most promising and well-known travel agencies in Bangladesh. The main office of this agency is in Dhaka, the capital of Bangladesh. Feel free to connect with us and explore the world.
@@ -220,7 +232,7 @@ const Home = () => {
     <div className="col-auto md:col-span-4">
     <div
         className="card backgroundImg mx-auto lg:p-5 px-7 lg:w-96 h-[400px] rounded-4 shadow-2xl  "
-        data-aos="zoom-in"
+        data-aos="fade-up"
         data-aos-delay="50"
         data-aos-duration="900"
       >
@@ -325,30 +337,6 @@ const Home = () => {
   </div>
 </div>
 
-
-      {/* <div
-        className="card imgBlog mb-8 bg-green-100 shadow-lg mx-auto image-full"
-        data-aos="flip-up"
-        data-aos-delay="80"
-        data-aos-duration="1000"
-      >
-        <figure>
-          <img
-            className="opacity-90 "
-            src="https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg"
-            alt="blog"
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="mb-3 text-2xl text-green-600  font-bold text-center"></h2>
-          <p className="text-white font-semibold text-center"></p>
-          <div className="card-actions justify-center">
-            <Link to="/blogs">
-              <button className="btn btn-primary ">Blogs</button>
-            </Link>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

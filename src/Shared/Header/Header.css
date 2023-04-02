@@ -4,6 +4,11 @@
     font-size: 18px; 
 }
 
+.color:hover{
+color: rgb(231, 248, 238);
+
+}
+
 .foo{
     bottom: 0;
 }
